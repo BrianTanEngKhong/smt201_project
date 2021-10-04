@@ -1,0 +1,35 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this site",
+      "description": "Some additional details about the website",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-10-04T17:19:06+08:00"
+    },
+    {
+      "path": "index.html",
+      "title": "SMT201 GIS Project Website",
+      "description": "Welcome to the website. I hope you enjoy it!\n",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-10-04T17:19:07+08:00"
+    },
+    {
+      "path": "overview.html",
+      "title": "Overview",
+      "description": "GIS Project overview.\n",
+      "author": [
+        {
+          "name": "Brian Tan Eng Khong",
+          "url": "https://www.linkedin.com/in/briantanengkhong/"
+        }
+      ],
+      "date": "`r Sys.Date()`",
+      "contents": "\r\n\r\nContents\r\n1.0 Introduction\r\n1.1 Data Preparation\r\n1.1.1 Add the GIS data into QGIS Project\r\n1.1.2 Using attribute query to select a subset from a master layer\r\n\r\n\r\n2.0 Raster Data Modelling\r\n2.1 Editing attribute data\r\n\r\n\r\n1.0 Introduction\r\nThe true power of a GIS is its analytical capability. GIS analysis functions, however, are generic and are not specifically designed for business intelligence applications. This is particularly true when the analysis involved massive and large data. To meet the analytical requirements and analysis efficiency of market researchers and business analysts, we need to combine appropriate GIS functions and analysis for modelling the business processes.\r\nThis hands-on exercise consists of two major sections. First, you will learn the basic concept of accessibility from geospatial perspective. You will also learn how to use appropriate raster GIS analyse function and mapping techniques to analyse and visualize accessibility maps.\r\n1.1 Data Preparation\r\nTwo GIS data are available for the analysis. They are:\r\nLocation of primary, secondary, mixed and JC (i.e. Education).\r\nOutline map of Singapore (i.e. CoastalOutline).\r\n1.1.1 Add the GIS data into QGIS Project\r\nBefore you can start to perform any analysis, you need to start a new QGIS project.\r\n\r\nDIY: Using the steps you had learned from last lesson, add the Education and CoastalOutline into the newly created QGIS project.\r\n\r\n1.1.2 Using attribute query to select a subset from a master layer\r\nThe Education layer consists of locations of education institutions such as primary schools, secondary school, mixed and JC. We are only interested on education institutions that belong to primary and secondary schools.\r\n\r\nDIY: Using the steps you had learned from last lesson, extract and save the primary and secondary schools in two separate GIS vector layers.\r\n\r\nYour screen should look similar to the figure below.\r\n\r\n2.0 Raster Data Modelling\r\nIn this exercise, you will learn how to model raster data. The exercise focusses on how to rasterise a vector GIS data layer using QGIS geoprocessing functions.\r\n2.1 Editing attribute data\r\nIn this section, you will create a new field in the attribute table of a vector GIS data and update values of the newly created field. You will name the field as POI_CODE. The data type of this data field is integer.\r\nAt Browser panel, right-click on the Primary Schools layer. Select Open Attribute Table from the context menu.\r\nThe Attribute table dialog window of Primary Schools appears.\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-10-04T17:45:56+08:00"
+    }
+  ],
+  "collections": []
+}
