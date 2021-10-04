@@ -59,7 +59,7 @@ In this section, you will create a new field in the attribute table of a vector 
 At **Browser** panel, right-click on the Primary Schools layer.
 **Select Open Attribute Table** from the context menu.
 
-The Attribute table dialog window of Primary Schools appears.
+The Attribute table dialog window of Primary Schools appears
 
 
 
