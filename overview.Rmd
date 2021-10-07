@@ -4,9 +4,15 @@ description: |
   GIS Project overview.
 author:
   - name: Brian Tan Eng Khong 
-    url: https://www.linkedin.com/in/briantanengkhong/
+    #url: https://www.linkedin.com/in/briantanengkhong/
     affiliation: School of Computing and Information Systems, Singapore Management University
     affiliation_url: https://scis.smu.edu.sg/
+  - name: Christine Kwan Jia Ing
+    affiliation: School of Computing and Information Systems, Singapore Management University
+    affiliation_url: https://scis.smu.edu.sg/
+  - name: Jamie Cho Xin Yi
+    affiliation: School of Computing and Information Systems, Singapore Management University
+    affiliation_url: https://scis.smu.edu.sg/   
 date: "`r Sys.Date()`"
 output: 
   distill::distill_article:

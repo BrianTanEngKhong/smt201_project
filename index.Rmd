@@ -1,5 +1,5 @@
 ---
-title: "SMT201 GIS Project Website"
+title: "SMT201 Team 3 Project Website"
 description: |
   Welcome to the website. I hope you enjoy it!
 site: distill::distill_website
