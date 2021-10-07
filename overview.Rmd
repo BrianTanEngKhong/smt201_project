@@ -13,9 +13,7 @@ author:
   - name: Jamie Cho Xin Yi
     affiliation: School of Computing and Information Systems, Singapore Management University
     affiliation_url: https://scis.smu.edu.sg/  
-  - name: ...
-    affiliation: School of Computing and Information Systems, Singapore Management University
-    affiliation_url: https://scis.smu.edu.sg/     
+
 date: "`r Sys.Date()`"
 output: 
   distill::distill_article:
