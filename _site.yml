@@ -1,7 +1,7 @@
 name: "smt201_project"
-title: "SMT201 GIS Project Website"
+title: "GIS Project Website"
 description: |
-  SMT201 GIS Project Website
+  GIS Project Website
 output_dir: "_site"
 navbar:
   left: 

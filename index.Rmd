@@ -3,42 +3,8 @@ title: "SMT201 Team 3 Project Website"
 description: |
   Welcome to the home page of **Team3 SMT201 Geographic Information Systems for Urban Planning** project website. 
   
-  This project aims to plan a new-province level city and to relocate the capital of Indonesia to Kalimantan on the island of Borneo. To achieve that, the proposed project aims to analyze the geographical layout of East Kalimantan to create a new province-level planned city. The goal of this strategy is to reduce developmental inequality between Java and other islands in the Indonesian archipelago as well as to reduce Jakarta's burden as Indonesia's Primary hub.Our team will deploy a 2 pronge approach to this project. 
+  This project aims to plan a new-province level city and to relocate the capital of Indonesia to Kalimantan on the island of Borneo. To achieve that, the proposed project aims to analyze the geographical layout of East Kalimantan to create a new province-level planned city. The goal of this strategy is to reduce developmental inequality between Java and other islands in the Indonesian archipelago as well as to reduce Jakarta's burden as Indonesia's Primary hub.
   
-  
-  We will prepare a report of survey to the Indonesia new national capital development plan which compasses the following theme 
-   
-   **1)Population and Demographic**
-   
-   **2)Economic and Businesses**
-   
-   **3)Transport and Communication**
-   
-   **4)Infrastructure**
-   
-   **5)Environment and Hazard**
-   
-   
-  
-    
-  We will also careful select a site that meets the following requirements
-  
-   
-    **- The proposed new capital city should be between 4500-5500 hectares in size**
-     
-    **- It should avoid steep slope. Steep slope developments are relative more costly because they involve cut-and-fill and is less environmental friendly.**
-    
-    **- It should be away from potential natural disaster risk areas such as sea coasts, major rivers and volcanoes.**
-    
-    **- It should be near to current urban settlement areas but not at the current major settlement areas.**
-     
-    **- It should avoid natural forest as much as possible.**
-    
-    **- It should avoid areas prone to forest fire.**
-     
-    **- It should be highly accessible via road transport.**
-     
-    **- It should be near to airport(s) and seaport(s).**
    
 site: distill::distill_website
 ---
@@ -50,6 +16,42 @@ knitr::opts_chunk$set(echo = FALSE)
 # https://rstudio.github.io/distill/website.html
 
 ```
+
+# Our team will deploy a 2 pronge approach to this project. 
+
+### We will prepare a report of survey to the Indonesia new national capital development plan which compasses the following theme
+
+1) Population and Demographic
+     
+2) Economic and Businesses
+     
+3) Transport and Communication
+     
+4) Infrastructure
+     
+5) Environment and Hazard
+   
+   
+  
+### We will also careful select a site that meets the following requirements
+
++ The proposed new capital city should be between 4500-5500 hectares in size.
+       
++ It should avoid steep slope. Steep slope developments are relative more costly because they involve cut-and-fill and is less environmental friendly.
+      
++ It should be away from potential natural disaster risk areas such as sea coasts, major rivers and volcanoes.
+      
++ It should be near to current urban settlement areas but not at the current major settlement areas.
+       
++ It should avoid natural forest as much as possible.
+      
++ It should avoid areas prone to forest fire.
+       
++ It should be highly accessible via road transport.
+       
++ It should be near to airport(s) and seaport(s).
+
+---
 
 # Group Members
 **Brian Tan Eng Khong**

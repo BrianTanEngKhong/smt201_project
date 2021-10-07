@@ -27,6 +27,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # 1.0	Introduction 
 
+
 The true power of a GIS is its analytical capability.  GIS analysis functions, however, are generic and are not specifically designed for business intelligence applications.  This is particularly true when the analysis involved massive and large data.  To meet the analytical requirements and analysis efficiency of market researchers and business analysts, we need to combine appropriate GIS functions and analysis for modelling the business processes. 
 
 This hands-on exercise consists of two major sections.  First, you will learn the basic concept of accessibility from geospatial perspective. You will also learn how to use appropriate raster GIS analyse function and mapping techniques to analyse and visualize accessibility maps. 
