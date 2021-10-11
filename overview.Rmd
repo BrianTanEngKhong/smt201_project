@@ -25,7 +25,42 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+# 1.0	Introduction 
+This project aims to plan a new-province level city and to relocate the capital of Indonesia to Kalimantan on the island of Borneo. This is in line with reducing the developmental inequality between java and other islands in the Indonesian archipelago and to reduce Jakarta's burden as Indonesia's Primary hub.
+
+Our team is deeply honored to be given this opportunity to put our Geospatial knowledge to good use by working with our client in finding a suitable site for the relocation using site suitability analysis. 
 
 
+# 2.0 Project Objective
+The project aims to analyse the study area, East Kalimantan in terms of the following aspects:
+
++ Population and demographic
+
++ Economic and Business
+
++ Transport and Communication
+
++ Infrastructure
+
++ Environment and Hazard
+
+
+We will also select a suitable site that meets the following requirements for capital relocation:
+
++ The proposed new capital city should be between 4500-5500 hectares in size.
+       
++ It should avoid steep slope. Steep slope developments are relative more costly because they involve cut-and-fill and is less environmental friendly.
+      
++ It should be away from potential natural disaster risk areas such as sea coasts, major rivers and volcanoes.
+      
++ It should be near to current urban settlement areas but not at the current major settlement areas.
+       
++ It should avoid natural forest as much as possible.
+      
++ It should avoid areas prone to forest fire.
+       
++ It should be highly accessible via road transport.
+       
++ It should be near to airport(s) and seaport(s).
 
 
