@@ -1,7 +1,20 @@
 ---
 title: "About this site"
 description: |
-  Some additional details about the website
+  SMT201 G1 T3 GIS Project
+
+author:
+  - name: Brian Tan Eng Khong 
+    url: https://www.linkedin.com/in/briantanengkhong/
+    affiliation: School of Computing and Information Systems, Singapore Management University
+    affiliation_url: https://scis.smu.edu.sg/
+  - name: Christine Kwan Jia Ing
+    affiliation: School of Computing and Information Systems, Singapore Management University
+    affiliation_url: https://scis.smu.edu.sg/
+  - name: Jamie Cho Xin Yi
+    affiliation: School of Computing and Information Systems, Singapore Management University
+    affiliation_url: https://scis.smu.edu.sg/  
+
 ---
 
 ```{r setup, include=FALSE}
