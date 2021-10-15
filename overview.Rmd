@@ -2,17 +2,6 @@
 title: "Overview"
 description: |
   GIS Project overview.
-author:
-  - name: Brian Tan Eng Khong 
-    #url: https://www.linkedin.com/in/briantanengkhong/
-    affiliation: School of Computing and Information Systems, Singapore Management University
-    affiliation_url: https://scis.smu.edu.sg/
-  - name: Christine Kwan Jia Ing
-    affiliation: School of Computing and Information Systems, Singapore Management University
-    affiliation_url: https://scis.smu.edu.sg/
-  - name: Jamie Cho Xin Yi
-    affiliation: School of Computing and Information Systems, Singapore Management University
-    affiliation_url: https://scis.smu.edu.sg/  
 
 date: "`r Sys.Date()`"
 output: 
@@ -65,4 +54,8 @@ We will also select a suitable site that meets the following requirements for ca
 
 
 # 3.0 Project Schedule
-![](img/Gantt.png)
+![](img/ganttchart.png)
+```{r, layout="l-body-outset", fig.width=1, fig.height=0.3}
+library(ggplot2)
+```
+
