@@ -54,8 +54,8 @@ We will also select a suitable site that meets the following requirements for ca
 
 
 # 3.0 Project Schedule
-![](img/ganttchart.png)
-```{r, layout="l-body-outset", fig.width=1, fig.height=0.3}
-library(ggplot2)
-```
 
+
+```{r layout="l-body-outset"}
+knitr::include_graphics("img/ganttchart.png")
+```
