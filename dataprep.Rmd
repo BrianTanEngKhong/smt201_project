@@ -12,9 +12,18 @@ output: distill::distill_article
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web. 
-
-Learn more about using Distill for R Markdown at <https://rstudio.github.io/distill>.
+# Data Sources
+Data Source | Name | Description | Link
+------------- | ------------- | ------------- | -------------
+Indonesia Geospatial | BATAS DESA DESEMBER 2019 DUKCAPIL KALIMANTAN TIMUR | Village boundary and population data for East Kalimantan 2019 | https://www.indonesia-geospasial.com/2020/04/download-shapefile-shp-batas-desa.html
+Indonesia Geospatial | Geology Kalimantan Timur | Geology Shapefile of East Kalimantan | https://www.indonesia-geospasial.com/2020/03/download-data-shapefile-shp-geologi-se.html 
+Indonesia Geospatial |KOTA BALIKPAPAN | Topographical data layers of Balikpapan City | 	https://www.indonesia-geospasial.com/2020/01/shp-rbi-provinsi-kalimantan-timur.html
+Indonesia Geospatial | KOTA SAMARINDA | Topographical data layers of Samarinda City | 	https://www.indonesia-geospasial.com/2020/01/shp-rbi-provinsi-kalimantan-timur.html
+Indonesia Geospatial | KUTAI KARTANEGARA | Topographical data layers of Kutai Kartanegara Regency | 	https://www.indonesia-geospasial.com/2020/01/shp-rbi-provinsi-kalimantan-timur.html
+Indonesia Geospatial | 	OSM Buildings | Detailed building footprints throughout Indonesia | https://www.indonesia-geospasial.com/2020/12/download-shp-pemukiman-detail-seluruh.html
+Indonesia Geospatial | PENAJAM PASER UTARA | Topographical data layers of Penajam Paser Regency | https://www.indonesia-geospasial.com/2020/01/shp-rbi-provinsi-kalimantan-timur.html
+Indonesia Geospatial | 30. Provinsi Kalimantan Timur | Digital elevation model at 30m resolution | https://www.indonesia-geospasial.com/2020/01/download-dem-srtm-30-meter-se-indonesia.html
+Indonesia Geospatial | Titik Api Hotspot se-Indonesia Tahun 2014 - 2019  | Indonesia fire Hotspot data from 2014-2019 | https://www.indonesia-geospasial.com/2020/04/shapefile-shp-titik-api-hotspot.html
 
 
 
