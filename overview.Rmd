@@ -14,7 +14,7 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# 1.0	Introduction 
+# 1.0	Introduction hello
 This project aims to plan a new-province level city and to relocate the capital of Indonesia to Kalimantan on the island of Borneo. This is in line with reducing the developmental inequality between java and other islands in the Indonesian archipelago and to reduce Jakarta's burden as Indonesia's Primary hub.
 
 Our team is deeply honored to be given this opportunity to put our Geospatial knowledge to good use by working with our client in finding a suitable site for the relocation using site suitability analysis. 
@@ -54,8 +54,5 @@ We will also select a suitable site that meets the following requirements for ca
 
 
 # 3.0 Project Schedule
+![](img/ganttchart.png){width=65%}
 
-
-```{r layout="l-body-outset"}
-knitr::include_graphics("img/ganttchart.png")
-```
