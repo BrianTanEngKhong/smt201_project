@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-### We will prepare a report of survey to the Indonesia new national capital development plan which compasses the following theme
+### We will prepare a report of survey to the Indonesia new national capital development plan which encompasses the following theme
 
 1) Population and Demographic
      
@@ -60,6 +60,6 @@ Email: ektan.2020@scis.smu.edu.sg
 
 Email: jikwan.2020@scis.smu.edu.sg
 
-**Jamie Cho Xin yi**
+**Jamie Cho Xin Yi**
 
 Email: jamie.cho.2020@scis.smu.edu.sg
