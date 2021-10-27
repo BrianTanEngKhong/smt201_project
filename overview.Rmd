@@ -21,7 +21,7 @@ Our team is deeply honored to be given this opportunity to put our Geospatial kn
 
 
 # 2.0 Project Objective
-The project aims to analyse the study area, East Kalimantan in terms of the following aspects:
+#### The project aims to analyse the study area, East Kalimantan in terms of the following aspects:
 
 + Population and demographic
 
@@ -34,7 +34,7 @@ The project aims to analyse the study area, East Kalimantan in terms of the foll
 + Environment and Hazard
 
 
-We will also select a suitable site that meets the following requirements for capital relocation:
+#### We will also select a suitable site that meets the following requirements for capital relocation:
 
 + The proposed new capital city should be between 4500-5500 hectares in size.
        
