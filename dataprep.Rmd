@@ -27,5 +27,22 @@ Indonesia Geospatial | Titik Api Hotspot se-Indonesia Tahun 2014 - 2019  | Indon
 
 
 
+# Geopackage
+
+
+## Coordinate Reference System
+**Name:** EPSG:23845 – DGN95/Indonesia TM-3 zone 54.1
+
+
+**Units:** Meters
+
+
+**Method:** Transverse Mercator
+
+
+**Celestial body:** Earth
+
+
+**Reference:** Static (relies on a datum which is plate-fixed)
 
 
