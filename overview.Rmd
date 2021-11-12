@@ -59,9 +59,6 @@ The proposed site of East Kalimantan, is near the regional cities, Balikpapan ci
 # 3.0 Project Schedule
 
 ![](img/ganttT3.jpg)
-![](img/GanttChart201.jpg)
-
-
 
 # 4.0 Data Sources
 Data Source | Name | Description | Link
