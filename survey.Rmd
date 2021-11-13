@@ -14,7 +14,7 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## 3.0 Report of Survey
+## 1.0 Report of Survey
 In this section, we will be analyzing the study area according to the following themes
 
 + Population and Demographics
@@ -31,8 +31,8 @@ We will be using OpenStreetMap (OSM) to compare data points and polygons to actu
 *Figure 1: Map of study Area*
 </p>
 
-## 3.1 Population Density and Demographics
-### <span style="text-decoration:underline">3.1.1 Population Density</span>
+## 1.1 Population Density and Demographics
+### <span style="text-decoration:underline">1.1.1 Population Density</span>
 ![](img/38.jpg)
 
 <p align = "center">
@@ -41,7 +41,7 @@ We will be using OpenStreetMap (OSM) to compare data points and polygons to actu
 
 As our group is looking for a suitable site, we consider the population density across each sub district as one of the important factors to analyze the site suitability. Thus, using the data found in Balikpapan city, Samarinda city, North Penajam Paser regency and Kutai Kartanegara regency, we merge them altogether to map out our population density choropleth map. One interesting finding was that in city sub-districts such as Samarinda and Balikpapan, the population density tends to be higher, between 2324 to 28047 per sub district boundary. Contrastingly, we see a smaller population density across most of North Penajam Paser regency and Kutai Kartanegara regency sub-districts. 
 
-### <span style="text-decoration:underline">3.1.2 Gender Distribution</span>
+### <span style="text-decoration:underline">1.1.2 Gender Distribution</span>
 ![](img/39.jpg)
 
 <p align = "center">
@@ -62,7 +62,7 @@ As our group is looking for a suitable site, we consider the population density 
 
 From *Figures 3, 4 and 5* above, we observed that the distribution of male to female in our study area remains somewhat equal with both showing the same gender distribution. One notable difference between figure 3 and 4 is that in Cities like Samarinda and Balikpapan, there is a higher concentration of males and females which further substantiates our earlier discussion that population density is higher in city subdistricts. 
 
-### <span style="text-decoration:underline">3.1.3 Distribution by age</span>
+### <span style="text-decoration:underline">1.1.3 Distribution by age</span>
 ![](img/42.jpg)
 
 <p align = "center">
@@ -79,7 +79,7 @@ From the choropleth map shown in *Figure 6a*, we observed that a large proportio
 
 From the choropleth map shown in *Figure 6b*, we observed a similar trend where senior citizens aged 60 and above are heavily concentrated around city centres like Kota Samarinda and Kota Balikpapan. This can be attributed to reasons such as proximity to healthcare facilities, where healthcare facilities are more accessible in city centres as compared to the outskirts of the study area. In figure 6b above, we observed that hospitals are mostly situated in Samarinda and Balikpapan city, and there is a lack of healthcare facilities found in Kutai Kartanegara Regency and PenajamNorthPaser Regency. Thus, this relationship between proximity to hospital facilities and population within the senior citizens demographics are highly correlated. 
 
-## 3.2 Economic and Businesses
+## 1.2 Economic and Businesses
 ![](img/44.jpg)
 
 <p align = "center">
@@ -88,7 +88,7 @@ From the choropleth map shown in *Figure 6b*, we observed a similar trend where 
 
 Indonesia is the largest palm oil producer in the world, while its forests make up the third largest tropical forests in the world. Additionally, Indonesia ranks among the world's top 10 coal and mining producers. In East Kalimantan, the key economic contribution to its GDP is attributed to the likes of agriculture, mining and manufacturing which we will comprehensively share in the upcoming part of the report. 
 
-### <span style="text-decoration:underline">3.2.1 Agriculture</span>
+### <span style="text-decoration:underline">1.2.1 Agriculture</span>
 
 ![](img/45.jpg)
 
@@ -108,9 +108,9 @@ Food crops are cultivated in **three categories** of arable land in Indonesia, *
 
 The agrifield layer represents **Tegalan**(dry-land) and **Ladang** (garden/bare land/ shifting land) which are known to be marginal land that has little or no agricultural or industrial value. We observed that agrifield is concentrated in Balikpapan, Samarinda and Kutai Kartanegara.
 
-The rice field layer represents **Sawah**(wet-land) which contributes to part of East Kalimantan rice production. We observed that ricefield is more commonly dispersed around the north western site of the study area as well as a smaller proportion within Kalimantan City. 
+The rice field layer represents **Sawah**(wet-land) which contributes to part of East Kalimantan rice production. We observed that ricefield is more commonly dispersed around the north western site of the study area as well as a smaller proportion within Samarinda City. 
 
-### <span style="text-decoration:underline">3.2.2 Mining</span>
+### <span style="text-decoration:underline">1.2.2 Mining</span>
 ![](img/47.jpg)
 
 <p align = "center">
@@ -125,7 +125,7 @@ The rice field layer represents **Sawah**(wet-land) which contributes to part of
 
 In East Kalimantan, mining contributes to the largest proportion in terms of GDP. From the data relating to mining that we found in our dataset, we classify them further into 3 categories which comprises Coal Mining, Other Mining and Surface Mining. We noticed that Coal Mining and other types of mining is apparent only in the Kutai Kartanegara Regency. For Surface Mining, it is only observed in the outskirts of Samarinda city and along the south-east region of Kutai Kartanegara Regency. In the study area of Penjamin Paser Utara and Balikpapan, there seems to be a lack of such land use in surface mining. Land used from mining activities could be a consideration when selecting the area for the city as it would involve additional economic cost to rehabilitate lands.
 
-### <span style="text-decoration:underline">3.2.3 Manufacturing</span>
+### <span style="text-decoration:underline">1.2.3 Manufacturing</span>
 
 ![](img/49.jpg)
 
@@ -137,20 +137,9 @@ For *Figure 11*, it represents the manufacturing geolocation found in our study 
 
 To conclude, with reference to the Agriculture layer and Industry layer which we further classify them, we are able to further understand the region's key economic sectors in the field of agriculture, mining and manufacturing. These are key considerations in allowing us to effectively find a suitable site for choosing a capital. 
 
-#### **Key Observations [For reference]**
 
-+ Larger areas of plantations can be found along the two regencies. 
-+ Balikpapan - heavily reliant on manufacturing, more manufacturing plant observed
-+ KutaiKartanegara - Where most of the mining takes place. 
-+ Plantation - all 4 cities and regencies
-+ Ricefield - More disperse around the north western site of study area
-+ Agrifield - More concentrated in Balikpapan, Samarinda and kutai kartanegara
-+ Plantation - Mostly seen in both regencies and in some sub districts of balikpapan and samarinda cities
-+ Mining - Surface Mining [in polygon geometry], Coal Mining and Other Mining [in point geometry] 
-
-
-## 3.3 Transport and Communication
-### <span style="text-decoration:underline">3.3.1 Airports, Seaports and Bus Terminals</span>
+## 1.3 Transport and Communication
+### <span style="text-decoration:underline">1.3.1 Airports, Seaports and Bus Terminals</span>
 
 ![](img/50.jpg)
 
@@ -160,7 +149,7 @@ To conclude, with reference to the Agriculture layer and Industry layer which we
 
 *Figure 12* illustrates the distribution of different transportation services in our study area. There are only two airports, one within Balikpapan city and the other in Penajam North Paser regency, just outside of Samarinda city. The seaports are mostly situated within or just outside of Balikpapan city and Samarinda city. Similarly, the bus terminals are also found close to Balikpapan city and Samarinda city. Collectively, the different modes of transportations are mostly situated within or near Balikpapan city and Samarinda city. Even though there are transportation services found in Penajam North Paser regency and Kutai Kartanegara regency, those services are mainly located at the edges of the two cities. This shows that most of the transportation services are found in a close vicinity to the cities.
 
-### <span style="text-decoration:underline">3.3.2 Roads</span>
+### <span style="text-decoration:underline">1.3.2 Roads</span>
 
 ![](img/51.jpg)
 
@@ -176,7 +165,7 @@ To conclude, with reference to the Agriculture layer and Industry layer which we
 
 This map in *Figure 13a and 13b* shows the distribution of road networks in East Kalimantan. From the above map, we can observe that the highest concentration of roads are found within Balikpapan city and Samarinda city. This further indicates that the cities have a higher concentration of transportation facilities as compared to the regencies. 
 
-### <span style="text-decoration:underline">3.3.3 Phone Towers</span>
+### <span style="text-decoration:underline">1.3.3 Phone Towers</span>
 ![](img/53.jpg)
 
 <p align = "center">
@@ -185,8 +174,8 @@ This map in *Figure 13a and 13b* shows the distribution of road networks in East
 
 *Figure 14* shows the distribution of phone towers in our study area. There is a large concentration of phone towers in Samarinda. Phone towers are electronic wireless equipment that allows the surrounding area to utilize wireless devices such as radios and cell phones. The distribution of phone towers indicates good connectivity between the different regions, allowing for good communication. 
 
-## 3.4 Transport and Communication
-### <span style="text-decoration:underline">3.4.1 Electricity towers and power</span>
+## 1.4 Transport and Communication
+### <span style="text-decoration:underline">1.4.1 Electricity towers and power</span>
 ![](img/54.jpg)
 
 <p align = "center">
@@ -195,16 +184,16 @@ This map in *Figure 13a and 13b* shows the distribution of road networks in East
 
 Electrical points are more prominent in Kota Samarinda and Kutai Kartanegara.These facilities provide infrastructure to further develop the country. It can be observed that the distribution of electrical towers are not evenly spread out as most of them are located in Kota Samarinda. This could be due to the fact that Kota Samarinda is the capital of East Kalimantan, and more modern buildings are located there. 
 
-### <span style="text-decoration:underline">3.4.2 Hospitals and healthcare services</span>
+### <span style="text-decoration:underline">1.4.2 Hospitals and healthcare services</span>
 ![](img/55.jpg)
 
 <p align = "center">
 *Figure 16: Distribution of hospitals and healthcare services*
 </p>
 
-*Figure 16* shows the distribution of hospitals and healthcare services. Hospitals are symbolised with a red cross while healthcare services are symbolised with a blue point. These are essential services as they prevent diseases, improve wellbeing and quality of life for citizens. However, we can see that some areas do not have any healthcare services as the points are sparsely scattered.Therefore, choosing a site nearer to polygons with many healthcare facilities will be ideal. 
+*Figure 16* shows the distribution of hospitals and healthcare services. Hospitals are symbolised with a red cross while healthcare services are symbolised with a blue point. These are essential services as they prevent diseases, improve wellbeing and quality of life for citizens. However, we can see that some areas do not have access to any healthcare services as the points are sparsely scattered. On the other hand, we observed that most hospitals are situated within Balikpapan city and Samarinda city. Therefore, choosing a site nearer to areas with many healthcare facilities will be ideal. 
 
-### <span style="text-decoration:underline">3.4.3 Educational institutions</span>
+### <span style="text-decoration:underline">1.4.3 Educational institutions</span>
 ![](img/56.jpg)
 
 <p align = "center">
@@ -213,10 +202,10 @@ Electrical points are more prominent in Kota Samarinda and Kutai Kartanegara.The
 
 Similarly, Kota Samarinda and the coastline of Kota Balikpapan are densely populated with educational institutions. They are not evenly distributed. This might be due to the fact that Kota Samarinda and Kota Balikpapan have a higher population density.
 
-## 3.5 Environment and Hazard
+## 1.5 Environment and Hazard
 We will be looking at fire hotspots, rivers, coastlines and forests to evaluate the environment and its hazards. 
 
-### <span style="text-decoration:underline">3.5.1 Fire hotspots</span>
+### <span style="text-decoration:underline">1.5.1 Fire hotspots</span>
 
 ![](img/57.jpg)
 
@@ -224,9 +213,9 @@ We will be looking at fire hotspots, rivers, coastlines and forests to evaluate 
 *Figure 18: Distribution of fire hotspots *
 </p>
 
-After clipping fire hotspot data to the study area, it is observed that hotspot points are consistently scattered throughout the whole study area except Loa Kulu and Sepaku (extreme left of study area). It can also be observed in figure 18 that the top most section of the study area is the most densely populated with fire hotspots. Therefore, when choosing the capital area, we should avoid hazardous portions of the study area. 
+After clipping fire hotspot data to the study area, it is observed that hotspot points are consistently scattered throughout the whole study area except Loa Kulu and Sepaku (extreme left of study area). It can also be observed in *Figure 18* that the top most section of the study area is the most densely populated with fire hotspots. Therefore, when choosing the capital area, we should avoid hazardous portions of the study area. 
 
-### <span style="text-decoration:underline">3.5.2 Rivers</span>
+### <span style="text-decoration:underline">1.5.2 Rivers</span>
 ![](img/58.jpg)
 
 <p align = "center">
@@ -235,7 +224,7 @@ After clipping fire hotspot data to the study area, it is observed that hotspot 
 
 Rivers run through the 4 regions. As it was mentioned in task 2 that our area should avoid major rivers, we took this into consideration. However, it is quite obvious that rivers are very prominent throughout the whole of East Kalimantan. 
 
-### <span style="text-decoration:underline">3.5.3 Coastlines</span>
+### <span style="text-decoration:underline">1.5.3 Coastlines</span>
 ![](img/59.jpg)
 
 <p align = "center">
@@ -244,7 +233,7 @@ Rivers run through the 4 regions. As it was mentioned in task 2 that our area sh
 
 It was also mentioned in task 2 that coastlines should be avoided when choosing a site as it could pose risks resulting from natural disaster. Indonesia  For instance, tsunamis occur in Indonesia. By avoiding coastlines, we are mitigating the chances of high casualties and fatalities should a tsunami take place.  
 
-### <span style="text-decoration:underline">3.5.4 Forest</span>
+### <span style="text-decoration:underline">1.5.4 Forest</span>
 ![](img/60.jpg)
 
 <p align = "center">
