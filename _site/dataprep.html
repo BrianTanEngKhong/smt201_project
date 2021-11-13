@@ -92,8 +92,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2021-11-12"/>
-  <meta property="article:created" itemprop="dateCreated" content="2021-11-12"/>
+  <meta property="article:published" itemprop="datePublished" content="2021-11-13"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-11-13"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="GIS Project Website: Data Preparation"/>
@@ -111,7 +111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Data Preparation"]},{"type":"character","attributes":{},"value":["Datasets used for Project\n"]},{"type":"character","attributes":{},"value":["2021-11-12"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Data Preparation"]},{"type":"character","attributes":{},"value":["Datasets used for Project\n"]},{"type":"character","attributes":{},"value":["2021-11-13"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2056,7 +2056,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Data Preparation","description":"Datasets used for Project","authors":[],"publishedDate":"2021-11-12T00:00:00.000+08:00"}
+{"title":"Data Preparation","description":"Datasets used for Project","authors":[],"publishedDate":"2021-11-13T00:00:00.000+08:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2090,7 +2090,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <div class="d-article">
-<h1 id="data-sources">Data Sources</h1>
+<h2 id="data-sources">1.0 Data Sources</h2>
 <table>
 <colgroup>
 <col style="width: 25%" />
@@ -2163,13 +2163,104 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </tr>
 </tbody>
 </table>
-<h1 id="geopackage">Geopackage</h1>
-<h2 id="coordinate-reference-system">Coordinate Reference System</h2>
+<h2 id="general-notes">2.0 General Notes</h2>
+<h3 id="saving-layers-in-geopackage-format"><span style="text-decoration:underline">2.1 Saving layers in GeoPackage format</span></h3>
+<p>Always remember to save all the layers in a <strong>GeoPackage</strong> format.</p>
+<ul>
+<li>Right click on the layer → Export → Save Features As…</li>
+</ul>
+<p>The Save Vector Layer as dialogue box will appear.</p>
+<ul>
+<li>Format: GeoPackage</li>
+<li>File name: Navigate to the GeoPackage file in which you want to save your layer in → <strong>Indonesia.gpkg</strong></li>
+<li>CRS: Set this to the project CRS, <strong>ESPG: 23845 - DGN95 / Indonesia TM-3 zone 54.1</strong>.</li>
+</ul>
+<p><img src="img/1.jpg" /></p>
+<ul>
+<li>Click on OK and close the dialogue box.</li>
+<li>Delete the unnecessary layers after GeoPackaging it.</li>
+</ul>
+<h3 id="coordinate-reference-system"><span style="text-decoration:underline">2.2 Coordinate Reference System</span></h3>
 <p><strong>Name:</strong> EPSG:23845 – DGN95/Indonesia TM-3 zone 54.1</p>
 <p><strong>Units:</strong> Meters</p>
 <p><strong>Method:</strong> Transverse Mercator</p>
 <p><strong>Celestial body:</strong> Earth</p>
 <p><strong>Reference:</strong> Static (relies on a datum which is plate-fixed)</p>
+<h2 id="data-preparation">3.0 Data Preparation</h2>
+<h3 id="selecting-study-area-polygon"><span style="text-decoration:underline">3.1 Selecting study area polygon</span></h3>
+<ul>
+<li>Add BATAS_DESA_DESEMBER_2019_DUKCAPIL_KALIMANTAN_TIMUR layer, open attribute table and click on <strong>Select by Expression</strong>.</li>
+</ul>
+<p>The <strong>Select by Expression</strong> dialogue box will appear.</p>
+<ul>
+<li>Under the Fields and Values drop-down list, double click on <strong>KECAMATAN</strong> which represents districts.</li>
+<li>Click on <strong>equal sign ‘=’</strong></li>
+<li>Click on the <strong>All Unique</strong> button at the right column</li>
+<li>Add the expression into the expression pane as shown below to select the required study area.</li>
+</ul>
+<p><img src="img/2.jpg" /></p>
+<ul>
+<li>Click on <strong>Select Features</strong> and it should appear similar to what is shown below</li>
+</ul>
+<p><img src="img/studyarea.jpg" /></p>
+<ul>
+<li>Right click on the layer → Export → Save selected features as</li>
+<li>Geopackage the selected features and name the layer <strong>east_kalimantan.</strong></li>
+</ul>
+<h3 id="adding-the-necessary-layers-for-analysis"><span style="text-decoration:underline">3.2 Adding the necessary layers for analysis</span></h3>
+<p>We will now be adding layers we need for both the Report of Survey (Task 1) and Site Selection (Task 2).</p>
+<p><strong>To be added on</strong></p>
+<h3 id="merging-layers"><span style="text-decoration:underline">3.3 Merging layers</span></h3>
+<p>Since we have data scattered in different files (e.g. road shapefiles from Kota Balikpapan, Kota Samarinda and more), we will be merging them into one layer for a cleaner QGIS environment.</p>
+<p><strong>To be added on</strong></p>
+<h3 id="clipping-the-various-layers"><span style="text-decoration:underline">3.4 Clipping the various layers</span></h3>
+<ul>
+<li><p>We will be clipping the layers as mentioned above so that points outside of east_kalimantan will be cleaned away to keep only the points and polygons within our study area.</p></li>
+<li><p>From the top menu bar, click on Vector → Geoprocessing → Clip</p></li>
+</ul>
+<p><img src="img/4.jpg" /></p>
+<ul>
+<li>For the Input layer, select from the drop down menu the layer in which we would like to clip. Note that all the layers merged in the previous section should be clipped.</li>
+<li>Click on the spanner beside the Input layer and select from the drop down menu <strong>Do not Filter (Better Performance).</strong></li>
+</ul>
+<p><img src="img/5.jpg" /></p>
+<ul>
+<li>For Limit features processed, select <strong>Not set</strong></li>
+<li>For Overlay layer, select east_kalimantan.</li>
+<li>Click on the spanner beside the Overlay layer and select from the drop down menu <strong>Do not Filter (Better Performance).</strong></li>
+<li>Geopackage clipped layer and remove the temporary clipped layer and merged layers.</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Layers to be clipped</th>
+<th>Final Layer Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>JALAN_LN_50K.shp</td>
+<td>roads_merged</td>
+</tr>
+<tr class="even">
+<td>Forest Fire Hotspot Data for year 2014 to 2019</td>
+<td>hotspots_merged</td>
+</tr>
+<tr class="odd">
+<td>AIRPORT_AR_50K.shp</td>
+<td>airports_merged</td>
+</tr>
+<tr class="even">
+<td>PELABUHAN_PT_50K.shp</td>
+<td>seaports_merged</td>
+</tr>
+<tr class="odd">
+<td>TERMINALBUS_PT_50K.shp</td>
+<td>bus_terminals_merged</td>
+</tr>
+</tbody>
+</table>
+<p><strong>To be added on</strong></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

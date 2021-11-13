@@ -12,7 +12,7 @@ output: distill::distill_article
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# Data Sources
+## 1.0 Data Sources
 Data Source | Name | Description | Link
 ------------- | ------------- | ------------- | -------------
 Indonesia Geospatial | BATAS DESA DESEMBER 2019 DUKCAPIL KALIMANTAN TIMUR | Village boundary and population data for East Kalimantan 2019 | https://www.indonesia-geospasial.com/2020/04/download-shapefile-shp-batas-desa.html
@@ -27,10 +27,27 @@ Indonesia Geospatial | Titik Api Hotspot se-Indonesia Tahun 2014 - 2019  | Indon
 
 
 
-# Geopackage
+## 2.0 General Notes
+### <span style="text-decoration:underline">2.1 Saving layers in GeoPackage format</span>
+Always remember to save all the layers in a **GeoPackage** format. 
 
 
-## Coordinate Reference System
++ Right click on the layer → Export → Save Features As...
+
+
+The Save Vector Layer as dialogue box will appear.
+
+
++ Format: GeoPackage
++ File name: Navigate to the GeoPackage file in which you want to save your layer in → **Indonesia.gpkg**
++ CRS: Set this to the project CRS, **ESPG: 23845 - DGN95 / Indonesia TM-3 zone 54.1**. 
+
+![](img/1.jpg)
+
++ Click on OK and close the dialogue box.
++ Delete the unnecessary layers after GeoPackaging it.
+
+### <span style="text-decoration:underline">2.2 Coordinate Reference System</span>
 **Name:** EPSG:23845 – DGN95/Indonesia TM-3 zone 54.1
 
 
@@ -46,3 +63,59 @@ Indonesia Geospatial | Titik Api Hotspot se-Indonesia Tahun 2014 - 2019  | Indon
 **Reference:** Static (relies on a datum which is plate-fixed)
 
 
+## 3.0 Data Preparation
+### <span style="text-decoration:underline">3.1 Selecting study area polygon</span>
++ Add BATAS_DESA_DESEMBER_2019_DUKCAPIL_KALIMANTAN_TIMUR layer, open attribute table and click on **Select by Expression**.
+
+The **Select by Expression** dialogue box will appear.
+
++ Under the Fields and Values drop-down list, double click on **KECAMATAN** which represents districts.
++ Click on **equal sign '='**
++ Click on the **All Unique** button at the right column 
++ Add the expression into the expression pane as shown below to select the required study area.
+
+![](img/2.jpg)
+
++ Click on **Select Features** and it should appear similar to what is shown below 
+
+
+![](img/studyarea.jpg)
+
++ Right click on the layer → Export → Save selected features as
++ Geopackage the selected features and name the layer **east_kalimantan.**
+
+### <span style="text-decoration:underline">3.2 Adding the necessary layers for analysis</span>
+We will now be adding layers we need for both the Report of Survey (Task 1) and Site Selection (Task 2).  
+
+**To be added on**
+
+### <span style="text-decoration:underline">3.3 Merging layers</span>
+Since we have data scattered in different files (e.g. road shapefiles from Kota Balikpapan, Kota Samarinda and more), we will be merging them into one layer for a cleaner QGIS environment.
+
+**To be added on**
+
+### <span style="text-decoration:underline">3.4 Clipping the various layers</span>
++ We will be clipping the layers as mentioned above so that points outside of east_kalimantan will be cleaned away to keep only the points and polygons within our study area. 
+
++ From the top menu bar, click on Vector → Geoprocessing → Clip
+
+![](img/4.jpg)
+
++ For the Input layer, select from the drop down menu the layer in which we would like to clip. Note that all the layers merged in the previous section should be clipped.
++ Click on the spanner beside the Input layer and select from the drop down menu **Do not Filter (Better Performance).**
+
+![](img/5.jpg)
+
++ For Limit features processed, select **Not set**
++ For Overlay layer, select east_kalimantan.
++ Click on the spanner beside the Overlay layer and select from the drop down menu **Do not Filter (Better Performance).**
++ Geopackage clipped layer and remove the temporary clipped layer and merged layers.
+
+Layers to be clipped | Final Layer Name 
+------------- | ------------- 
+JALAN_LN_50K.shp | roads_merged 
+Forest Fire Hotspot Data for year 2014 to 2019 | hotspots_merged
+AIRPORT_AR_50K.shp | airports_merged
+PELABUHAN_PT_50K.shp | seaports_merged
+TERMINALBUS_PT_50K.shp | bus_terminals_merged
+**To be added on**
