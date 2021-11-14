@@ -489,3 +489,71 @@ Next, we will need to calculate the area of each polygon.
 ![](img/36.jpg)
 
 ## 7.0 Geopackaged Layers
+GeoPackage Layer Name | Geometry | Description
+------------- | ------------- | ------------- 
+Agriculture_merged | Vector - Polygon | Includes all agriculture polygons in the study area
+Agrifield | Vector - Polygon | Represents **Tegalan**(dry-land) and **Ladang** (garden/bare land/ shifting land) 
+AHP | Raster | Raster layer of composite factor score
+AHP_suitability | Vector - Polygon | Polygons of suitable sites
+Airport | Vector - Polygon | Airport polygons in the study area
+airport_points | Vector - Point | Airport points in the study area
+airport_proximity | Raster | Proximity to airport polygons
+airport_rasterized | Raster | Raster layer made from airport polygons
+AirportBuffer | Vector - Polygon | Polygon representation of Airport Buffer Zone of 3.5km
+AirportDissolved | Vector - Polygon | Dissolved Airport polygons in the study area
+BalikpapanCity | Vector - Polygon | Polygon of Kota Balikpapan
+bus_terminals_merged | Vector - Point | Bus terminal points in the study area
+CoalMining | Vector - Point | Coal Mining points in the study area 
+Coastline | Vector - Line | Coastlines in the study area
+connectingRoads | Vector - Line | Major roads in our study area
+connectingRoads_proximity | Raster | Proximity to major roads
+connectingRoads_rasterized | Raster | Raster layer made from connectingRoads
+DEM_new | Raster | Digital Elevation Model of the study area
+disaster_merged | Vector - Line | Merged river and coastline layers
+disaster_proximity | Raster | Proximity to river and coastline
+disaster_rasterized | Raster | Raster layer of disaster_merged
+east_kalimantan | Vector - Polygon | Study area
+education_merged | Vector - Point | Education points in our study area
+electricity_merged | Vector - Point | Electricity points in our study area
+factor_airport | Raster | Raster layer of standardised score for proximity to airport polygons
+factor_connectingRoad | Raster | Raster layer of standardised score for proximity to connectingRoads
+factor_disaster_new | Raster | Raster layer of standardised score for proximity to river and coastlines
+factor_forest | Raster | Raster layer of standardised score for proximity to forests
+factor_hotspot | Raster | Raster layer of standardised score for proximity to hotspots
+factor_seaport | Raster | Raster layer of standardised score for proximity to seaports
+factor_settlement | Raster | Raster layer of standardised score for proximity to settlements
+factor_slope | Raster | Raster layer of standardised score for slope
+FinalSite | Vector - Polygon | Final site which was chosen for task 2
+forest | Vector - Polygon | Forest polygons in the study area
+forest_proximity | Raster | Proximity to forests
+forest_rasterized | Raster | Raster layer of forest polygons
+Geology | Vector - Polygon | Geology polygon for Indonesia
+Geology_StudyArea | Vector - Polygon | Geology polygon for the study area
+healthServices_merged | Vector - Point | Health services points in our study area
+Hillshade | Raster | Grayscale 3D representation of the surface
+hospitals_merged | Vector - Point | Hospital points in the study area
+hotspots_heatmap | Raster | Heatmap of hotspots in the study area
+hotspots_merged | Vector - Point | Hotspot points in the study area
+Industry_merged | Vector - Point | Industry points in the study area
+KutaiKartanegara_Regency | Vector - Polygon | Kutai Kartanegara regency
+Manufacturing | Vector - Point | Manufacturing points in the study area
+MCDA_model | Raster | Reclassified raster of AHP. White portions indicate suitable sites while black portions indicate non suitable sites. 
+OpenMining | Vector - Polygon | Polygon of Surface Mining areas in the study area
+OtherMining | Vector - Point | Point representation of Other Mining activities in study area
+PenajamNorthPaser_Regency | Vector - Polygon | Polygon of Penajam North Paser Regency
+phone_towers | Vector - Point | Phone tower points in the study area
+Plantations_merged | Vector - Polygon | Polygons of plantations in the study area
+Ricefield | Vector - Polygon | Polygon of rice fields in the study area 
+rivers | Vector - Line | Lines of rivers across the study area
+roads_merged | Vector - Line | Lines of roads across the study area
+SamarindaCity | Vector - Polygon | Polygon of Kota Samarinda
+Seaport | Vector - Point | Seaport points in the study area
+seaport_proximity | Raster | Proximity to seaports
+seaport_rasterized | Raster | Raster layer of seaport points
+Settlement | Vector - Polygon | Polygons of settlements in the study area
+settlement_proximity | Raster | Proximity to settlements
+settlement_rasterized | Raster | Raster layer of settlement polygons
+slope30by30 | Raster | Slope layer which has a resolution of 30m by 30m
+slopeStudyArea | Raster | Slope layer of the study area
+StudyAreaSingle | Vector - Polygon | A single polygon of our entire study area
+

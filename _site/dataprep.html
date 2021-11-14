@@ -92,8 +92,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2021-11-14"/>
-  <meta property="article:created" itemprop="dateCreated" content="2021-11-14"/>
+  <meta property="article:published" itemprop="datePublished" content="2021-11-15"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-11-15"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="GIS Project Website: Hands-on Guide"/>
@@ -111,7 +111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Hands-on Guide"]},{"type":"character","attributes":{},"value":["Step by step guide from Data Collection to Site Selection\n"]},{"type":"character","attributes":{},"value":["2021-11-14"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[4]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Hands-on Guide"]},{"type":"character","attributes":{},"value":["Step by step guide from Data Collection to Site Selection\n"]},{"type":"character","attributes":{},"value":["2021-11-15"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[4]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2056,7 +2056,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Hands-on Guide","description":"Step by step guide from Data Collection to Site Selection","authors":[],"publishedDate":"2021-11-14T00:00:00.000+08:00"}
+{"title":"Hands-on Guide","description":"Step by step guide from Data Collection to Site Selection","authors":[],"publishedDate":"2021-11-15T00:00:00.000+08:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2820,6 +2820,347 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </blockquote>
 <p><img src="img/36.jpg" /></p>
 <h2 id="geopackaged-layers">7.0 Geopackaged Layers</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>GeoPackage Layer Name</th>
+<th>Geometry</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Agriculture_merged</td>
+<td>Vector - Polygon</td>
+<td>Includes all agriculture polygons in the study area</td>
+</tr>
+<tr class="even">
+<td>Agrifield</td>
+<td>Vector - Polygon</td>
+<td>Represents <strong>Tegalan</strong>(dry-land) and <strong>Ladang</strong> (garden/bare land/ shifting land)</td>
+</tr>
+<tr class="odd">
+<td>AHP</td>
+<td>Raster</td>
+<td>Raster layer of composite factor score</td>
+</tr>
+<tr class="even">
+<td>AHP_suitability</td>
+<td>Vector - Polygon</td>
+<td>Polygons of suitable sites</td>
+</tr>
+<tr class="odd">
+<td>Airport</td>
+<td>Vector - Polygon</td>
+<td>Airport polygons in the study area</td>
+</tr>
+<tr class="even">
+<td>airport_points</td>
+<td>Vector - Point</td>
+<td>Airport points in the study area</td>
+</tr>
+<tr class="odd">
+<td>airport_proximity</td>
+<td>Raster</td>
+<td>Proximity to airport polygons</td>
+</tr>
+<tr class="even">
+<td>airport_rasterized</td>
+<td>Raster</td>
+<td>Raster layer made from airport polygons</td>
+</tr>
+<tr class="odd">
+<td>AirportBuffer</td>
+<td>Vector - Polygon</td>
+<td>Polygon representation of Airport Buffer Zone of 3.5km</td>
+</tr>
+<tr class="even">
+<td>AirportDissolved</td>
+<td>Vector - Polygon</td>
+<td>Dissolved Airport polygons in the study area</td>
+</tr>
+<tr class="odd">
+<td>BalikpapanCity</td>
+<td>Vector - Polygon</td>
+<td>Polygon of Kota Balikpapan</td>
+</tr>
+<tr class="even">
+<td>bus_terminals_merged</td>
+<td>Vector - Point</td>
+<td>Bus terminal points in the study area</td>
+</tr>
+<tr class="odd">
+<td>CoalMining</td>
+<td>Vector - Point</td>
+<td>Coal Mining points in the study area</td>
+</tr>
+<tr class="even">
+<td>Coastline</td>
+<td>Vector - Line</td>
+<td>Coastlines in the study area</td>
+</tr>
+<tr class="odd">
+<td>connectingRoads</td>
+<td>Vector - Line</td>
+<td>Major roads in our study area</td>
+</tr>
+<tr class="even">
+<td>connectingRoads_proximity</td>
+<td>Raster</td>
+<td>Proximity to major roads</td>
+</tr>
+<tr class="odd">
+<td>connectingRoads_rasterized</td>
+<td>Raster</td>
+<td>Raster layer made from connectingRoads</td>
+</tr>
+<tr class="even">
+<td>DEM_new</td>
+<td>Raster</td>
+<td>Digital Elevation Model of the study area</td>
+</tr>
+<tr class="odd">
+<td>disaster_merged</td>
+<td>Vector - Line</td>
+<td>Merged river and coastline layers</td>
+</tr>
+<tr class="even">
+<td>disaster_proximity</td>
+<td>Raster</td>
+<td>Proximity to river and coastline</td>
+</tr>
+<tr class="odd">
+<td>disaster_rasterized</td>
+<td>Raster</td>
+<td>Raster layer of disaster_merged</td>
+</tr>
+<tr class="even">
+<td>east_kalimantan</td>
+<td>Vector - Polygon</td>
+<td>Study area</td>
+</tr>
+<tr class="odd">
+<td>education_merged</td>
+<td>Vector - Point</td>
+<td>Education points in our study area</td>
+</tr>
+<tr class="even">
+<td>electricity_merged</td>
+<td>Vector - Point</td>
+<td>Electricity points in our study area</td>
+</tr>
+<tr class="odd">
+<td>factor_airport</td>
+<td>Raster</td>
+<td>Raster layer of standardised score for proximity to airport polygons</td>
+</tr>
+<tr class="even">
+<td>factor_connectingRoad</td>
+<td>Raster</td>
+<td>Raster layer of standardised score for proximity to connectingRoads</td>
+</tr>
+<tr class="odd">
+<td>factor_disaster_new</td>
+<td>Raster</td>
+<td>Raster layer of standardised score for proximity to river and coastlines</td>
+</tr>
+<tr class="even">
+<td>factor_forest</td>
+<td>Raster</td>
+<td>Raster layer of standardised score for proximity to forests</td>
+</tr>
+<tr class="odd">
+<td>factor_hotspot</td>
+<td>Raster</td>
+<td>Raster layer of standardised score for proximity to hotspots</td>
+</tr>
+<tr class="even">
+<td>factor_seaport</td>
+<td>Raster</td>
+<td>Raster layer of standardised score for proximity to seaports</td>
+</tr>
+<tr class="odd">
+<td>factor_settlement</td>
+<td>Raster</td>
+<td>Raster layer of standardised score for proximity to settlements</td>
+</tr>
+<tr class="even">
+<td>factor_slope</td>
+<td>Raster</td>
+<td>Raster layer of standardised score for slope</td>
+</tr>
+<tr class="odd">
+<td>FinalSite</td>
+<td>Vector - Polygon</td>
+<td>Final site which was chosen for task 2</td>
+</tr>
+<tr class="even">
+<td>forest</td>
+<td>Vector - Polygon</td>
+<td>Forest polygons in the study area</td>
+</tr>
+<tr class="odd">
+<td>forest_proximity</td>
+<td>Raster</td>
+<td>Proximity to forests</td>
+</tr>
+<tr class="even">
+<td>forest_rasterized</td>
+<td>Raster</td>
+<td>Raster layer of forest polygons</td>
+</tr>
+<tr class="odd">
+<td>Geology</td>
+<td>Vector - Polygon</td>
+<td>Geology polygon for Indonesia</td>
+</tr>
+<tr class="even">
+<td>Geology_StudyArea</td>
+<td>Vector - Polygon</td>
+<td>Geology polygon for the study area</td>
+</tr>
+<tr class="odd">
+<td>healthServices_merged</td>
+<td>Vector - Point</td>
+<td>Health services points in our study area</td>
+</tr>
+<tr class="even">
+<td>Hillshade</td>
+<td>Raster</td>
+<td>Grayscale 3D representation of the surface</td>
+</tr>
+<tr class="odd">
+<td>hospitals_merged</td>
+<td>Vector - Point</td>
+<td>Hospital points in the study area</td>
+</tr>
+<tr class="even">
+<td>hotspots_heatmap</td>
+<td>Raster</td>
+<td>Heatmap of hotspots in the study area</td>
+</tr>
+<tr class="odd">
+<td>hotspots_merged</td>
+<td>Vector - Point</td>
+<td>Hotspot points in the study area</td>
+</tr>
+<tr class="even">
+<td>Industry_merged</td>
+<td>Vector - Point</td>
+<td>Industry points in the study area</td>
+</tr>
+<tr class="odd">
+<td>KutaiKartanegara_Regency</td>
+<td>Vector - Polygon</td>
+<td>Kutai Kartanegara regency</td>
+</tr>
+<tr class="even">
+<td>Manufacturing</td>
+<td>Vector - Point</td>
+<td>Manufacturing points in the study area</td>
+</tr>
+<tr class="odd">
+<td>MCDA_model</td>
+<td>Raster</td>
+<td>Reclassified raster of AHP. White portions indicate suitable sites while black portions indicate non suitable sites.</td>
+</tr>
+<tr class="even">
+<td>OpenMining</td>
+<td>Vector - Polygon</td>
+<td>Polygon of Surface Mining areas in the study area</td>
+</tr>
+<tr class="odd">
+<td>OtherMining</td>
+<td>Vector - Point</td>
+<td>Point representation of Other Mining activities in study area</td>
+</tr>
+<tr class="even">
+<td>PenajamNorthPaser_Regency</td>
+<td>Vector - Polygon</td>
+<td>Polygon of Penajam North Paser Regency</td>
+</tr>
+<tr class="odd">
+<td>phone_towers</td>
+<td>Vector - Point</td>
+<td>Phone tower points in the study area</td>
+</tr>
+<tr class="even">
+<td>Plantations_merged</td>
+<td>Vector - Polygon</td>
+<td>Polygons of plantations in the study area</td>
+</tr>
+<tr class="odd">
+<td>Ricefield</td>
+<td>Vector - Polygon</td>
+<td>Polygon of rice fields in the study area</td>
+</tr>
+<tr class="even">
+<td>rivers</td>
+<td>Vector - Line</td>
+<td>Lines of rivers across the study area</td>
+</tr>
+<tr class="odd">
+<td>roads_merged</td>
+<td>Vector - Line</td>
+<td>Lines of roads across the study area</td>
+</tr>
+<tr class="even">
+<td>SamarindaCity</td>
+<td>Vector - Polygon</td>
+<td>Polygon of Kota Samarinda</td>
+</tr>
+<tr class="odd">
+<td>Seaport</td>
+<td>Vector - Point</td>
+<td>Seaport points in the study area</td>
+</tr>
+<tr class="even">
+<td>seaport_proximity</td>
+<td>Raster</td>
+<td>Proximity to seaports</td>
+</tr>
+<tr class="odd">
+<td>seaport_rasterized</td>
+<td>Raster</td>
+<td>Raster layer of seaport points</td>
+</tr>
+<tr class="even">
+<td>Settlement</td>
+<td>Vector - Polygon</td>
+<td>Polygons of settlements in the study area</td>
+</tr>
+<tr class="odd">
+<td>settlement_proximity</td>
+<td>Raster</td>
+<td>Proximity to settlements</td>
+</tr>
+<tr class="even">
+<td>settlement_rasterized</td>
+<td>Raster</td>
+<td>Raster layer of settlement polygons</td>
+</tr>
+<tr class="odd">
+<td>slope30by30</td>
+<td>Raster</td>
+<td>Slope layer which has a resolution of 30m by 30m</td>
+</tr>
+<tr class="even">
+<td>slopeStudyArea</td>
+<td>Raster</td>
+<td>Slope layer of the study area</td>
+</tr>
+<tr class="odd">
+<td>StudyAreaSingle</td>
+<td>Vector - Polygon</td>
+<td>A single polygon of our entire study area</td>
+</tr>
+</tbody>
+</table>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
