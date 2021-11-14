@@ -7,12 +7,14 @@ navbar:
   left: 
     - text: "Overview"
       href: overview.html
-    - text: "Data Preparation"
+    - text: "Hands-on Preparation"
       href: dataprep.html
     - text: "Report of Survey"
       href: survey.html
     - text: "Site Selection Report"
       href: site.html
+    - text: "Poster"
+      href: poster.html
   right:
     - text: "Home"
       href: index.html

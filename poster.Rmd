@@ -1,0 +1,117 @@
+---
+main_topsize: 0.1 #percent coverage of the poster
+main_bottomsize: 0.1
+#ESSENTIALS
+title: ""
+
+author:
+  - name: '**Tan Eng Khong, Jamie Cho, Christine Kwan**'
+poster_height:  "33.11in"
+poster_width: "23.39in"
+body_textsize: "25px"
+title_textsize: "60px"
+
+column_numbers: 4
+
+font_family: "Rasa"
+primary_colour: "#000000"
+secondary_colour: "#000000"
+accent_colour: "#000000"
+
+main_findings:
+  - "Keep calm and Kali(mantan) on"
+
+output: 
+  posterdown::posterdown_betterport:
+    self_contained: false
+    pandoc_args: --mathjax
+    number_sections: false
+bibliography: packages.bib
+link-citations: true
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      tidy = FALSE,
+                      message = FALSE,
+                      fig.align = 'center',
+                      out.width = "100%")
+options(knitr.table.format = "html") 
+```
+
+# Issues & problems
+Indonesia is not uniformly developed. Additionally, Jakarta is strained being the sole primary hub. 
+
+# Motivation
+To reduce the developmental inequality and Jakarta's burden as Indonesia's primary hub, we carry out suitable analyses to locate a new province-level planned city. 
+
+# Approach
+1. Isolate study area from East Kalimantan
+2. Select relevant factors (report of survey) for consideration
+3. Rasterize and vectorize relevant factors 
+4. Perform AHP analysis 
+5. Select most relevant site from results
+
+# Study area
+<center>
+![](studyarea1.jpg){width=90%} 
+</center>
+
+# Transport & comuunication
+<center> ![Connecting Roads](road.jpg){width=90%} </center> <br>
+Highest concentration of major roads are found within Balikpapan city and Samarinda city which indicates these cities have a larger concentration of transportation facilities as compared to the regencies. 
+
+
+<center> ![Transport services](bus.jpg){width=90%} </center> <br> The different modes of transportations, airports, seaports and bus terminals are mostly situated within or near Balikpapan city and Samarinda city.
+
+# Population & demographic
+<center> ![Distribution of adults aged 20 to 59](popdemo.jpg){width=90%} </center> <br> This group of people is vital for national progression as they are working individuals. Darker shaded areas have a denser population. This is well explained as Samarinda and Balikpapan are both city centers, signifying more job opportunities for career advancement.
+
+# Economic & business
+<center> ![](surfacemining.jpg){width=90%} </center>
+<center> ![](othermining.jpg){width=90%} </center>
+The dataset contains coal mining, surface mining and other mining. Land used from mining activities could be a consideration when selecting the area for the city as it would involve additional economic cost to rehabilitate lands.
+
+# Infrastructure
+<center> ![](hosp.jpg){width=90%} </center> <br> These are essential services as they prevent diseases, improve wellbeing and quality of life for citizens. Choosing a site nearer to polygons with more healthcare facilities will be ideal. 
+<center> ![](education.jpg){width=90%} </center> <br> Educational institutions are not evenly distributed. Kota Samarinda and the coastline of Kota Balikpapan are densely populated with educational institutions. This might be due to the higher population density in those areas.
+<center> ![](electricity.jpg){width=90%} </center> <br> Electrical towers are not evenly spread out. This could be due to the fact that Kota Samarinda is the capital, and more modern buildings are located there. 
+
+# Environment & hazard
+<center> ![](hotspot.jpg){width=90%} </center> <br> It is observed that hotspot points are consistently scattered throughout the whole study area. When choosing the capital area, we should avoid these spots as much as possible. 
+<center> ![](forest.jpg){width=90%} </center> <br> Climate change is a real problem, we should preserve forests as and when we can. By choosing a site that is far from forests, it reduces the need for deforestation, thus preserving the environment. 
+<center> ![](coastline.jpg){width=90%} </center> <br> Tsunamis are prevalent in Indonesia. By avoiding coastlines, we are mitigating the chances of high casualties and fatalities should a tsunami take place. 
+
+
+```{r, include=FALSE}
+knitr::write_bib(c('posterdown', 'rmarkdown','pagedown'), 'packages.bib')
+```
+
+# Site selection
+<center> ![](finalsite.jpg){width=70%} </center> <br>
+<center> ![](ahp.jpg){width=90%} </center> <br>
+<center> ![](matrix.jpg){width=90%} </center> <br>
+
+After standarizing and rasterizing with the z-formula below, we created an AHP site suitability layer with the AHP values with a consistency check of 4%. 
+
+$$
+z = 
+\frac{x - min(x)}{max(x) - min(x)}
+$$
+We continued to narrow down the sites from AHP suitability layer by selecting sites that meet the 4500 to 5500 hectare requirement, and we were left with 2 sites to choose from. The following comparison table shows our thought process for evaluating the 2 sites. 
+
+<center> ![](comparisontable.jpg){width=90%} </center> <br>
+
+Since site 1 has more highlighted boxes, it shows that site 1 is more favourable. Hence, our chosen site. 
+
+# Future work
+QGIS has proven to be a powerful and cost effective application for analysts. With many plugins in their repository, we are able to manipulate data and produce web pages for professional use.
+
+Narrowing down such a huge map to several sites has been challenging. It is important to first identify constraints and limitations when performing map study. We could have also analysed additional factors such as gross domestic product (GDP) and potential business ventures that Indonesia can undertake to make sure their new province thrives. For instance, by planning out what new activities the selected site could do will create clear goals when building its infrastructure.
+
+As our AHP consistency score is 4%, we could have tried out more AHP permutations to get an even lower consistency score. This would provide us even more suitable sites for analysis. 
+
+Additionally, it would be good if we were able to get external help from someone fluent in Bahasa Indonesia. As attributes in the data are mainly in that language, we were unable to translate all attributes accurately due to the language barrier. Therefore, there might be minor inconsistencies as we might have missed a few layers, which might have affected the final AHP site suitability results. 
+
+In future, we hope that the skills we gained from Geographic Information Systems for Urban Planning will be put to good use, so that we can derive deeper insights for better urban planning and analysis.
