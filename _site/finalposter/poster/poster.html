@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>poster.knit</title>
+
+<script src="poster_files/header-attrs-2.11/header-attrs.js"></script>
+
+
+
+
+
+
+<!--
+Font-awesome icons ie github or twitter
+-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
+
+<!--
+Google fonts api stuff
+-->
+<link href='https://fonts.googleapis.com/css?family=Special Elite' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Rasa' rel='stylesheet'>
+
+<!--
+Here are the required style attributes for css to make this poster work :)
+-->
+<style>
+@page {
+size: 23.39in 33.11in;
+margin: 0;
+padding: 0;
+}
+body {
+margin: 0px;
+padding: 0px;
+width: 23.39in;
+height: 33.11in;
+text-align: justify;
+font-size: 25px;
+line-height: 1.05;
+}
+/* RMarkdown Class Styles */
+/* center align leaflet map,
+from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
+.html-widget {
+margin: auto;
+position: sticky;
+margin-top: 2cm;
+margin-bottom: 2cm;
+}
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
+position: sticky;
+width: 100%;
+}
+pre.sourceCode.r {
+background-color: #dddddd40;
+border-radius: 4mm;
+padding: 4mm;
+width: 75%;
+margin: auto;
+margin-top: 1em;
+margin-bottom: 1em;
+/* align-items: center; */
+}
+code.sourceCode.r{
+background-color: transparent;
+font-size: 20pt;
+border-radius: 2mm;
+}
+code {
+font-size: 25pt;
+font-family: monospace;
+background-color: #808D9824;
+color: #808D98;
+padding: 1.2mm;
+line-height: 1;
+border-radius: 2mm;
+}
+caption {
+margin-bottom: 10px;
+font-size: 20pt;
+font-style: italic;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #808D9820;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+  border-spacing: 0;
+  font-size: 40%;
+  border-style: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 1em;
+  padding-left: 1em;
+  line-height: 1em;
+}
+table {
+  margin: auto;
+}
+th {
+  padding-left: 5mm;
+  padding-right: 5mm;
+}
+.caption {
+font-size: 20pt;
+font-style: italic;
+padding-top: 0;
+}
+.references {
+font-size: 20px;
+line-height: 90%;
+}
+/* Create three unequal columns that floats next to each other */
+.column {
+float: left;
+padding: 0px;
+}
+.outer {
+width: 23.39in;
+height: calc(33.11in *  (1 - 0.1 - 0.1 - 0.01) );
+-webkit-column-count: 4; /* Chrome, Safari, Opera */
+-moz-column-count: 4; /* Firefox */
+column-count: 4;
+-webkit-column-fill: auto;
+-moz-column-fill: auto;
+column-fill: auto;
+column-gap: 0;
+padding-left: 0cm;
+padding-right: 0cm;
+/* -webkit-column-rule-width: 50%;
+-moz-column-rule-width: 50%;
+column-rule-width: 50%; */
+-webkit-column-rule-style: none;
+-moz-column-rule-style: none;
+column-rule-style: none;
+-webkit-column-rule-color: black;
+-moz-column-rule-color: black;
+column-rule-color: black;
+background-color: #ffffff;
+font-family: Rasa;
+margin-top: calc(33.11in *  0.1 );
+padding-top: 1em;
+padding-bottom: 1em;
+}
+span.citation {
+  color: #808D98;
+  font-weight: bold;
+}
+a {
+text-decoration: none;
+color: #808D98;
+}
+#title {
+font-size: 125pt;
+text-align: left;
+margin: 0;
+line-height: 98%;
+border-bottom: 0;
+font-weight: normal;
+background: 0;
+}
+#author {
+color: #808D98;
+margin: 0;
+line-height: 85%;
+font-size: 1.17em;
+}
+#affiliation {
+padding-top: 0.1em;
+color: ;
+font-style: italic;
+font-size: 25px;
+margin: 0;
+}
+sup {
+color: #000000;
+}
+.affiliation sup {
+font-size: 20px;
+}
+.author {
+text-align: left;
+}
+.author sup {
+font-size: 30px;
+}
+.author_extra {
+color: #808D98;
+margin: 0;
+line-height: 85%;
+font-size: 35px;
+text-align: left;
+}
+.outer h1, h2, h3, h4, h5, h6 {
+text-align: center;
+margin: 0;
+font-weight: bold;
+}
+.section h1 {
+  text-align:center;
+  padding-bottom:5px;
+  background:
+    linear-gradient(
+      to left,
+      #ffffff 1%,
+      #ffffff 20%,
+      #808D9875 33%,
+      #808D98 50%,
+      #808D9875 66%,
+      #ffffff 80%,
+      #ffffff 99%
+    )
+    left
+    bottom
+    #ffffff
+    no-repeat;
+  background-size:100% 5px ;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.outer h2 {
+text-align: center;
+}
+.outer p, .level2 {
+color: #000000;
+}
+.outer ol {
+padding-left: 8%;
+padding-right: 8%;
+text-align: left;
+}
+.main {
+width: 23.39in;
+height: calc(33.11in * 0.1);
+position: absolute;
+background-color: #808D98;
+color: #ffffff90;
+font-family: Special Elite;
+background-image: linear-gradient(#808D98 50%,#808D98);
+}
+.main strong {
+color: #ffffff;
+}
+.main strong > sup {
+color: #ffffff;
+}
+.main sup {
+color: #ffffff90;
+}
+#main-img-left {
+width: 10%;
+left: 0.5in;
+bottom: 0.2in;
+position: absolute;
+}
+#main-img-center {
+width: 10%;
+left: calc(23.39in * 0.45);
+bottom: 0.5in;
+position: absolute;
+}
+#main-img-right {
+width: 10%;
+right: 0.5in;
+bottom: 0.2in;
+position: absolute;
+}
+.main p {
+font-size: 150px;
+font-family: Special Elite;
+text-align: center;
+margin: 0;
+position: absolute;
+top: 50%;
+-ms-transform: translateY(-50%);
+transform: translateY(-50%);
+margin-left: 1em;
+}
+.fab {
+color: #00000030;
+font-size: 25px;
+}
+.twitter, i {
+color: #00000030;
+font-size: 35px;
+text-decoration: none;
+}
+a.email {
+text-decoration: none;
+color: #00000030;
+font-size: 35px;
+}
+.envelope {
+color: #00000030;
+font-size: 5px;
+text-decoration: none;
+}
+.poster_wrap {
+width: 23.39in;
+height: 33.11in;
+padding: 0cm;
+}
+.main_bottom {
+width: 23.39in;
+height: calc(33.11in * 0.1);
+margin-top: calc(33.11in * (1 - 0.1));
+position: absolute;
+background-color: #808D98;
+background-image: linear-gradient(#808D98 10%, #808D98);
+}
+.section {
+  padding-left: 10mm;
+  padding-right: 10mm;
+}
+span > #tab:mytable {
+  font-weight: bold;
+}
+.orcid img {
+  width: 3%;
+}
+.emphasis {
+  background-color: #008080;
+  color: #ffffff;
+  border: solid #0b2045 3mm;
+  margin: 1em;
+  padding-left: 0;
+  padding-right: 0;
+}
+.emphasis h1 {
+  font-weight: bold;
+  background: none;
+  background-color: #0b2045;
+  padding-bottom: 5mm;
+  padding-top: 1mm;
+  margin-top: -1mm;
+  margin-right: -1mm;
+  margin-left: -1mm;
+}
+.emphasis blockquote {
+  border: 0;
+}
+.emphasis ol {
+  padding: 0;
+  padding-left: 8%;
+  font-size: 100%;
+  font-weight: bold;
+}
+.emphasis p {
+  color: #ffffff;
+}
+</style>
+</head>
+<body>
+
+
+<div class="poster_wrap">
+
+<div class="column outer">
+<div class="section">
+
+<h3 id="author" class="author">
+
+</h3>
+
+<h5 id="author_extra", class="author_extra">
+<strong>G1T3 <br> Tan Eng Khong <br> Jamie Cho <br> Christine Kwan</strong><sup></sup>
+</h5>
+
+
+</div>
+
+<div id="issues-problems" class="section level1">
+<h1>Issues &amp; problems</h1>
+<p>Indonesia is not uniformly developed. Additionally, Jakarta is strained being the sole primary hub.</p>
+</div>
+<div id="motivation" class="section level1">
+<h1>Motivation</h1>
+<p>To reduce the developmental inequality and Jakarta’s burden as Indonesia’s primary hub, we carry out suitable analyses to locate a new province-level planned city.</p>
+</div>
+<div id="approach" class="section level1">
+<h1>Approach</h1>
+<ol style="list-style-type: decimal">
+<li>Isolate study area from East Kalimantan</li>
+<li>Select relevant factors (report of survey) for consideration</li>
+<li>Rasterize and vectorize relevant factors</li>
+<li>Perform AHP analysis</li>
+<li>Select most relevant site from results</li>
+</ol>
+</div>
+<div id="study-area" class="section level1">
+<h1>Study area</h1>
+<center>
+<img src="studyarea1.jpg" style="width:90.0%" />
+</center>
+</div>
+<div id="transport-comuunication" class="section level1">
+<h1>Transport &amp; comuunication</h1>
+<center>
+<img src="road.jpg" title="fig:" style="width:90.0%" alt="Connecting Roads" />
+</center>
+<p>Highest concentration of major roads are found within Balikpapan city and Samarinda city which indicates these cities have a larger concentration of transportation facilities as compared to the regencies.</p>
+<center>
+<img src="bus.jpg" title="fig:" style="width:90.0%" alt="Transport services" />
+</center>
+<p>The different modes of transportations, airports, seaports and bus terminals are mostly situated within or near Balikpapan city and Samarinda city.</p>
+</div>
+<div id="population-demographic" class="section level1">
+<h1>Population &amp; demographic</h1>
+<center>
+<img src="popdemo.jpg" title="fig:" style="width:90.0%" alt="Distribution of adults aged 20 to 59" />
+</center>
+<p><br> This group of people is vital for national progression as they are working individuals. Darker shaded areas have a denser population. This is well explained as Samarinda and Balikpapan are both city centers, signifying more job opportunities for career advancement.</p>
+</div>
+<div id="economic-business" class="section level1">
+<h1>Economic &amp; business</h1>
+<center>
+<img src="surfacemining.jpg" title="fig:" style="width:90.0%" alt="Surface mining" />
+</center>
+<center>
+<img src="othermining.jpg" title="fig:" style="width:90.0%" alt="Other mining" />
+</center>
+<p>The dataset contains coal mining, surface mining and other mining. Land used from mining activities could be a consideration when selecting the area for the city as it would involve additional economic cost to rehabilitate lands.</p>
+</div>
+<div id="infrastructure" class="section level1">
+<h1>Infrastructure</h1>
+<center>
+<img src="hosp.jpg" title="fig:" style="width:90.0%" alt="Hospitals &amp; health services" />
+</center>
+These are essential services as they prevent diseases, improve wellbeing and quality of life for citizens. Choosing a site nearer to polygons with more healthcare facilities will be ideal.
+<center>
+<img src="education.jpg" title="fig:" style="width:90.0%" alt="Educational institutions" />
+</center>
+Educational institutions are not evenly distributed. Kota Samarinda and the coastline of Kota Balikpapan are densely populated with educational institutions. This might be due to the higher population density in those areas.
+<center>
+<img src="electricity.jpg" title="fig:" style="width:90.0%" alt="Electrical towers" />
+</center>
+<p>Electrical towers are not evenly spread out. This could be due to the fact that Kota Samarinda is the capital, and more modern buildings are located there.</p>
+</div>
+<div id="environment-hazard" class="section level1">
+<h1>Environment &amp; hazard</h1>
+<center>
+<img src="hotspot.jpg" title="fig:" style="width:90.0%" alt="Fire hotspots" />
+</center>
+<br> It is observed that hotspot points are consistently scattered throughout the whole study area. When choosing the capital area, we should avoid these spots as much as possible.
+<center>
+<img src="forest.jpg" title="fig:" style="width:90.0%" alt="Forests" />
+</center>
+<br> Climate change is a real problem, we should preserve forests as and when we can. By choosing a site that is far from forests, it reduces the need for deforestation, thus preserving the environment.
+<center>
+<img src="coastline.jpg" title="fig:" style="width:90.0%" alt="Coastline" />
+</center>
+<p><br> Tsunamis are prevalent in Indonesia. By avoiding coastlines, we are mitigating the chances of high casualties and fatalities should a tsunami take place.</p>
+</div>
+<div id="site-selection" class="section level1">
+<h1>Site selection</h1>
+<center>
+<img src="finalsite.JPG" title="fig:" style="width:70.0%" alt="Chosen site" />
+</center>
+<br>
+<center>
+<img src="ahp.JPG" title="fig:" style="width:90.0%" alt="AHP" />
+</center>
+<br>
+<center>
+<img src="matrix.JPG" title="fig:" style="width:90.0%" alt="Pairwise comparison matrix" />
+</center>
+<p><br></p>
+<p>After standarizing and rasterizing with the z-formula below, we created an AHP site suitability layer with the AHP values with a consistency check of 4%.</p>
+<p><span class="math display">\[
+z = 
+\frac{x - min(x)}{max(x) - min(x)}
+\]</span>
+We continued to narrow down the sites from AHP suitability layer by selecting sites that meet the 4500 to 5500 hectare requirement, and we were left with 2 sites to choose from. The following comparison table shows our thought process for evaluating the 2 sites.</p>
+<center>
+<img src="comparisontable.JPG" title="fig:" style="width:90.0%" alt="Comparison table" />
+</center>
+<p><br></p>
+<p>Since site 1 has more highlighted boxes, it shows that site 1 is more favorable. Hence, our chosen site.</p>
+</div>
+<div id="future-work" class="section level1">
+<h1>Future work</h1>
+<p>QGIS has proven to be a powerful and cost effective application for analysts. With many plugins in their repository, we are able to manipulate data and produce web pages for professional use.</p>
+<p>Narrowing down such a huge map to several sites has been challenging. It is important to first identify constraints and limitations when performing map study. We could have also analysed additional factors such as gross domestic product (GDP) and potential business ventures that Indonesia can undertake to make sure their new province thrives. For instance, by planning out what new activities the selected site could do will create clear goals when building its infrastructure.</p>
+<p>As our AHP consistency score is 4%, we could have tried out more AHP permutations to get an even lower consistency score. This would provide us even more suitable sites for analysis.</p>
+<p>Additionally, it would be good if we were able to get external help from someone fluent in Bahasa Indonesia. As attributes in the data are mainly in that language, we were unable to translate all attributes accurately due to the language barrier. Therefore, there might be minor inconsistencies as we might have missed a few layers, which might have affected the final AHP site suitability results.</p>
+<p>In future, we hope that the skills we gained from Geographic Information Systems for Urban Planning will be put to good use, so that we can derive deeper insights for better urban planning and analysis.</p>
+</div>
+
+</div>
+<div class="main">
+<p>Keep calm and Kali on!</p>
+</div>
+<div class="main_bottom">
+<img id="main-img-left" src=>
+<img id="main-img-center" src=>
+<img id="main-img-right" src=>
+</div>
+</div>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+var script = document.createElement("script");
+script.type = "text/javascript";
+var src = "true";
+if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+if (location.protocol !== "file:" && /^https?:/.test(src))
+src = src.replace(/^https?:/, '');
+script.src = src;
+document.getElementsByTagName("head")[0].appendChild(script);
+})();
+</script>
+
+
+</body>
+</html>

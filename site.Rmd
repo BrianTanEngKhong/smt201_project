@@ -60,7 +60,7 @@ We set n = 8 for the number of factors to be used in our AHP calculation and ran
   <li>**Natural Disaster**
       <ol>
       <li type="i">Since the main goal of choosing a site is to create a new province-level city, we feel the most important factor for consideration is safety since many people will be visiting or permanently staying in this area. Should there be any natural catastrophes, casualties will be high. </li>
-      <li type="i">We will be analysing this by looking at fire hotspots, coastlines and rivers.</li>
+      <li type="i">We will be analysing this by looking at coastlines and rivers.</li>
     </ol>
   </li>
 
@@ -82,7 +82,7 @@ We set n = 8 for the number of factors to be used in our AHP calculation and ran
   
   <li>**Seaport**
         <ol>
-      <li type="i">Indonesia is the world’s largest exporter of mining resources. Therefore, we conclude it  is more important than airports since mining resources are generally transported with cargo ships. An article reported that “With exports of oil, gas and coal steadily increasing, the province was responsible for a major portion of the country’s export output with a value of US$37.97 billion. As of October 2012, its export output value stood at $27.71 billion.” Furthermore, Balikpapan is labelled as “a seaport city on the east coast of East Kalimantan,” meaning that they rely more heavily on seaports. (Indonesia - Insights, n.d.) </li>
+      <li type="i">Indonesia is the world’s largest exporter of mining resources. Therefore, we conclude it  is more important than airports since mining resources are generally transported with cargo ships. An article reported that “With exports of oil, gas and coal steadily increasing, the province was responsible for a major portion of the country’s export output with a value of US$37.97 billion. As of October 2012, its export output value stood at $27.71 billion.” Furthermore, Balikpapan is labelled as “a seaport city on the east coast of East Kalimantan,” meaning that they rely more heavily on seaports. (International Trading Institute, n.d.) </li>
       <li type="i">We will analyse this through rasterized points of seaports. This is because we lack the polygon representation of seaport polygons. </li>
     </ol>
   </li>
