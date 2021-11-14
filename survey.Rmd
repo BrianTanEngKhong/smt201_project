@@ -83,7 +83,7 @@ From the choropleth map shown in *Figure 6b*, we observed a similar trend where 
 ![](img/44.jpg)
 
 <p align = "center">
-*Figure 7: East Kalimantan GDP distribution by sector*
+*Figure 7: East Kalimantan GDP distribution by sector (Statista Research Department, 2020)*
 </p>
 
 Indonesia is the largest palm oil producer in the world, while its forests make up the third largest tropical forests in the world. Additionally, Indonesia ranks among the world's top 10 coal and mining producers. In East Kalimantan, the key economic contribution to its GDP is attributed to the likes of agriculture, mining and manufacturing which we will comprehensively share in the upcoming part of the report. 

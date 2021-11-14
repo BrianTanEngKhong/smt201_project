@@ -88,27 +88,30 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
   <title>GIS Project Website: Site Selection Report</title>
 
-  <meta property="description" itemprop="description" content="Site selection of East Kalimantan"/>
+  <meta property="description" itemprop="description" content=""/>
 
 
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2021-11-14"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-11-14"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="GIS Project Website: Site Selection Report"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Site selection of East Kalimantan"/>
+  <meta property="og:description" content=""/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="GIS Project Website"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="GIS Project Website: Site Selection Report"/>
-  <meta property="twitter:description" content="Site selection of East Kalimantan"/>
+  <meta property="twitter:description" content=""/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output"]}},"value":[{"type":"character","attributes":{},"value":["Site Selection Report"]},{"type":"character","attributes":{},"value":["Site selection of East Kalimantan\n"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Site Selection Report"]},{"type":"character","attributes":{},"value":[""]},{"type":"character","attributes":{},"value":["2021-11-14"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[4]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2053,7 +2056,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Site Selection Report","description":"Site selection of East Kalimantan","authors":[]}
+{"title":"Site Selection Report","description":"","authors":[],"publishedDate":"2021-11-14T00:00:00.000+08:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2083,11 +2086,282 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1>Site Selection Report</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Site selection of East Kalimantan</p></p>
+
 </div>
 
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#site-selection">1.0 Site Selection</a>
+<ul>
+<li><a href="#preliminary-analysis-geology-layer">1.1 Preliminary Analysis: Geology Layer</a></li>
+<li><a href="#ahp-analysis">1.2 AHP Analysis</a></li>
+<li><a href="#narrowing-down-the-suitable-sites">1.3 Narrowing down the suitable sites</a></li>
+<li><a href="#comparing-the-sites">1.4 Comparing the sites</a></li>
+<li><a href="#site-overview-and-conclusion">1.5 Site overview and conclusion</a></li>
+<li><a href="#future-work-and-conclusion">1.5 Future Work and Conclusion</a></li>
+</ul></li>
+</ul>
+</nav>
+</div>
+<h1 id="site-selection">1.0 Site Selection</h1>
+<h2 id="preliminary-analysis-geology-layer">1.1 Preliminary Analysis: Geology Layer</h2>
+<p><img src="img/A1.jpg" /></p>
+<p align="center">
+<em>Figure 1: Distribution of Volcanoes in East Kalimantan</em>
+</p>
+<p><strong><em>Legend:</em></strong></p>
+<ul>
+<li><strong>Yellow</strong>: Volcanic areas</li>
+<li><strong>Red Outline:</strong> Study area</li>
+<li><strong>Pink:</strong> Geology overview in East Kalimantan</li>
+</ul>
+<p>In our site selection, we looked for potential natural disaster risk areas such as sea coasts, major rivers and volcanoes. Upon analysis, we found out that there were no volcanoes within our study area as indicated in the image above. Therefore, the study area is safe from volcanic hazards and activity.</p>
+<h2 id="ahp-analysis">1.2 AHP Analysis</h2>
+<p>Before performing site selection, we will have to first conduct Analytical Hierarchical Process (AHP) analysis to determine which criterias should be prioritized for decision making.</p>
+<p>By keeping the following goal in mind, we will explain our reasons for choosing the weightings for each criteria.</p>
+<ul>
+<li>Goal: To create a new <strong>province-level planned city</strong>, and the capital will be relocated to a more central location within Indonesia. The plan is part of a strategy to reduce developmental inequality between Java and other islands in the Indonesian archipelago and to reduce Jakarta’s burden as Indonesia’s primary hub.</li>
+</ul>
+<p>A primary hub is defined as a main hub for airlines. By operating an additional hub, it will take away the pressure from Jakarta being the sole primary hub in Indonesia. The implementation of a new hub will bring in more business to Indonesia, boosting tourism and export sectors.</p>
+<p><img src="img/23.jpg" /></p>
+<p align="center">
+<em>Figure 2: AHP scores</em>
+</p>
+<p><img src="img/22.jpg" /></p>
+<p align="center">
+<em>Figure 3: Pairwise comparison matrix</em>
+</p>
+<p>We set n = 8 for the number of factors to be used in our AHP calculation and ranked these factors in decreasing order of importance. The final consistency showed a result of 4% which we thought was a suitable score. We used these values to compute the AHP site suitability layer in our QGIS project. Additionally, we took into account the amount of data we have for each of the factors, as a lack of data will not produce an accurate site suitability result. We will now justify why we think each factor should be ranked as so. The factors and our respective rankings are:</p>
+<ol>
+<li>
+<strong>Natural Disaster</strong>
+<ol>
+<li type="i">
+Since the main goal of choosing a site is to create a new province-level city, we feel the most important factor for consideration is safety since many people will be visiting or permanently staying in this area. Should there be any natural catastrophes, casualties will be high.
+</li>
+<li type="i">
+We will be analysing this by looking at fire hotspots, coastlines and rivers.
+</li>
+</ol>
+</li>
+<li>
+<strong>Forest</strong>
+<ol>
+<li type="i">
+If the chosen area is near forests, a lot of land pre-planning will need to be done. Especially in a time where global warming is a real issue, we should not support more deforestation for industrial purposes. To preserve the environment, we should select areas that are more barren.
+</li>
+<li type="i">
+We will analyse this by comparing site areas with OpenStreetMap.
+</li>
+</ol>
+</li>
+<li>
+<strong>Forest fire</strong>
+<ol>
+<li type="i">
+Forest fire can also be seen as a type of natural disaster. However, it is more predictable. It can be gauged through ambient temperatures. It is still very dangerous as the fumes resulting from forest fires can negatively impact the health of citizens. It also kills off the flora and fauna. We also have many data points on forest fires, which is why we think that ranking it first will be significant, as we need to avoid hotspot points.
+</li>
+<li type="i">
+We will be analysing this through forest hotspots from our datasets.
+</li>
+</ol>
+</li>
+<li>
+<strong>Seaport</strong>
+<ol>
+<li type="i">
+Indonesia is the world’s largest exporter of mining resources. Therefore, we conclude it is more important than airports since mining resources are generally transported with cargo ships. An article reported that “With exports of oil, gas and coal steadily increasing, the province was responsible for a major portion of the country’s export output with a value of US$37.97 billion. As of October 2012, its export output value stood at $27.71 billion.” Furthermore, Balikpapan is labelled as “a seaport city on the east coast of East Kalimantan,” meaning that they rely more heavily on seaports. (Indonesia - Insights, n.d.)
+</li>
+<li type="i">
+We will analyse this through rasterized points of seaports. This is because we lack the polygon representation of seaport polygons.
+</li>
+</ol>
+</li>
+<li>
+<strong>Road transport</strong>
+<ol>
+<li type="i">
+We ranked this after airport/seaport because airports and seaports help connect Indonesia to the world. Road transport is more so for domestic travelling purposes. It is still important as citizens need to be able to efficiently move within the country.
+</li>
+<li type="i">
+We will be analysing this through the rasterized layer for road transport.
+</li>
+</ol>
+</li>
+<li>
+<strong>Airport</strong>
+<ol>
+<li type="i">
+Airports are still important because they bring in tourists to Indonesia. This boosts Indonesia’s economy. Additionally, they can also be used to export sensitive and perishable goods.
+</li>
+<li type="i">
+We will analyse this through rasterized polygons for airports. Polygons are more accurate.
+</li>
+</ol>
+</li>
+<li>
+<strong>Slope</strong>
+<ol>
+<li type="i">
+Although it is important to note that our selected site should avoid steep slopes due to higher development cost from the involvement of more cut-and-fill, we felt that slope does not outweigh the above mentioned factors.
+</li>
+<li type="i">
+We will analyse this using the slope layer that we created so that we can analyze steep slope areas to avoid.
+</li>
+</ol>
+</li>
+<li>
+<strong>Settlement</strong>
+<ol>
+<li type="i">
+By planning a provincial area, many people would flock to this area to live since it is accessible. Hence, a suitable area would be one near current urban settlement areas and not major ones which are already densely populated.
+</li>
+<li type="i">
+We will be analysing this through the use of a choropleth map created with population attributes. Additionally, we will cross reference with Indonesia’s OpenStreetMap to analyze the complexity of buildings.
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="narrowing-down-the-suitable-sites">1.3 Narrowing down the suitable sites</h2>
+<p><img src="img/A2.jpg" /></p>
+<p align="center">
+<em>Figure 4: Suitable sites</em>
+</p>
+<p>After performing AHP analysis, we have derived a layer with suitable sites highlighted in green as shown in figure 25. To narrow down these areas, we first check if each of these suitable sites meet the size requirements. As we have calculated the area of each of these polygons in hectares, we can simply use the identify tool to confirm whether or not the polygons are within 4500 to 5500 hectares.</p>
+<p><img src="img/A3.jpg" /></p>
+<p align="center">
+<em>Figure 5: Selecting polygons with appropriate size</em>
+</p>
+<p><img src="img/A4.jpg" /></p>
+<p align="center">
+<em>Figure 6: Polygons with appropriate size</em>
+</p>
+<p>By using the select expression function, we can key in the following to determine which polygons meet the size criteria. As seen in figure 6, we have narrowed down the suitable sites to just 2 locations. For simplicity purposes, we will be calling the site on the <strong>far left “1”</strong> and the site on the <strong>far right “2”.</strong></p>
+<h2 id="comparing-the-sites">1.4 Comparing the sites</h2>
+<p><img src="img/00.JPG" /></p>
+<p align="center">
+<em>Figure 7: Sites and natural disaster</em>
+</p>
+<p>While both sites are relatively far away and safe from fire hotspots, site 1 is more preferable as it is away from the coastlines and rivers.</p>
+<p><img src="img/01.JPG" /></p>
+<p align="center">
+<em>Figure 8: Sites and forests</em>
+</p>
+<p>Both sites are far away from forests. However, site 2 has more forest surrounding it. This may mean that the forests have to be cleared to improve accessibility to that area. Therefore, site 1 is more favourable.</p>
+<p><img src="img/02.JPG" /></p>
+<p align="center">
+<em>Figure 9: Sites and hotspots</em>
+</p>
+<p>From <em>Figure 9</em>, Both sites are safe from fire hotspots as they are far away from them.</p>
+<p><img src="img/03.JPG" /></p>
+<p align="center">
+<em>Figure 10: Sites and seaports</em>
+</p>
+<p>From <em>Figure 10</em>, Site 2 is more favourable as it is nearer to seaports. This allows for more efficient transportation as workers in site 2 will not have to travel as much to get to seaports.</p>
+<p><img src="img/04.JPG" /></p>
+<p align="center">
+<em>Figure 11: Sites and road transport</em>
+</p>
+<p>From <em>Figure 11</em>, the lines in red show connecting roads for East Kalimantan. Site 2 does not have any connecting roads leading to it, which makes it inaccessible. This might also be due to the face that the entrance to site 2 is blocked by forests as shown in figure 11.</p>
+<p><img src="img/05.JPG" /></p>
+<p align="center">
+<em>Figure 12: Sites and road transport</em>
+</p>
+<p>Both sites are not very near to the airport points. However, because site 2 does not have connecting roads, it makes it even more difficult to access airports. Therefore, site 1 is preferred.</p>
+<p><img src="img/06.JPG" /></p>
+<p align="center">
+<em>Figure 13: Sites and slope</em>
+</p>
+<p>From <em>Figure 13</em>, White areas represent steeper slopes compared to darker areas. Based on this map, site 2 is more preferred because it has a gentler slope. Places with steeper slopes result in higher development cost due to the cut and fill.</p>
+<p><img src="img/07.JPG" /></p>
+<p align="center">
+<em>Figure 14: Sites and settlements</em>
+</p>
+<p>As part of the requirements, the site should be near urban settlement areas but not located directly at major settlement areas. This is true for both sites as they are not currently in highly populated areas. However, in terms of accessibility, site 1 is preferred as it has connecting roads, making it nearer to current settlement areas as compared to site 2. The ease of access thereby makes site 1 “nearer” to these settlements.</p>
+<h2 id="site-overview-and-conclusion">1.5 Site overview and conclusion</h2>
+<p>The table below shows our thought process. By comparing both sites with each attribute, we are able to find the most optimal solution.The underlined column represent the site with the more preferred characteristic.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Site</strong></th>
+<th><strong>1</strong></th>
+<th><strong>2</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Natural disaster</strong></td>
+<td><span style="text-decoration:underline">Far away from coastline and rivers</span></td>
+<td>Closer to coastline and rivers</td>
+</tr>
+<tr class="even">
+<td><strong>Forest</strong></td>
+<td><span style="text-decoration:underline">No forest blocking entrance to the area </span></td>
+<td>Forest blocking entrance to area</td>
+</tr>
+<tr class="odd">
+<td><strong>Forest fire</strong></td>
+<td><span style="text-decoration:underline">Far away from hotspots </span></td>
+<td><span style="text-decoration:underline">Far away from hotspots </span></td>
+</tr>
+<tr class="even">
+<td><strong>Seaport</strong></td>
+<td>Further from seaports</td>
+<td><span style="text-decoration:underline">Nearer to seaports </span></td>
+</tr>
+<tr class="odd">
+<td><strong>Road transport</strong></td>
+<td><span style="text-decoration:underline">More accessible </span></td>
+<td>Less accessible</td>
+</tr>
+<tr class="even">
+<td><strong>Airport</strong></td>
+<td><span style="text-decoration:underline">More accessible to airports </span></td>
+<td>Less accessible to airports</td>
+</tr>
+<tr class="odd">
+<td><strong>Slope</strong></td>
+<td>Steeper slope</td>
+<td><span style="text-decoration:underline">Gentler slope </span></td>
+</tr>
+<tr class="even">
+<td><strong>Settlement</strong></td>
+<td><span style="text-decoration:underline">Nearer to settlement areas </span></td>
+<td>Further from settlement areas</td>
+</tr>
+<tr class="odd">
+<td><strong>Size</strong></td>
+<td><span style="text-decoration:underline"> 5452 hectares </span></td>
+<td>5373 hectares</td>
+</tr>
+<tr class="even">
+<td><strong>Total Underlined</strong></td>
+<td>7</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>Apart from size, all other factors in the table are ranked in order of decreasing weight as per our AHP analysis. Hence, attributes higher up should be prioritized for consideration. For example, even though site 2 has a gentler slope, selecting site 2 will lead to tradeoffs such as lower accessibility and higher chances of fatalities due to it being prone to natural disasters.</p>
+<p><img src="img/08.JPG" /></p>
+<p align="center">
+<em>Figure 15: Final selected site</em>
+</p>
+<p>In totality, site 1 has 7 preferred attributes while site 2 only has 3. Therefore, site 1 is our chosen site as shown in figure 36.</p>
+<h2 id="future-work-and-conclusion">1.5 Future Work and Conclusion</h2>
+<p>QGIS has proven to be a powerful and cost effective application for analysts. With many plugins in their repository, we are able to manipulate data and produce web pages for professional use.</p>
+<p>Narrowing down such a huge map to several sites has been challenging. It is important to first identify constraints and limitations when performing map study. We could have also analysed additional factors such as gross domestic product (GDP) and potential business ventures that Indonesia can undertake to make sure their new province thrives. For instance, by planning out what new activities the selected site could do will create clear goals when building its infrastructure.</p>
+<p>As our AHP consistency score is 4%, we could have tried out more AHP permutations to get an even lower consistency score. This would provide us even more suitable sites for analysis.</p>
+<p>Additionally, it would be good if we were able to get external help from someone fluent in Bahasa Indonesia. As attributes in the data are mainly in that language, we were unable to translate all attributes due to the language barrier. Therefore, there might be minor inconsistencies as we might have missed a few layers, which might have affected the final AHP site suitability results.</p>
+<p>In future, we hope that the skills we gained from Geographic Information Systems for Urban Planning will be put to good use, so that we can derive deeper insights for better urban planning and analysis.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
