@@ -55,33 +55,33 @@ To reduce the developmental inequality and Jakarta's burden as Indonesia's prima
 
 # Study area
 <center>
-![](studyarea1.jpg){width=90%} 
+![](img/studyarea1.jpg){width=90%} 
 </center>
 
 # Transport & comuunication
-<center> ![Connecting Roads](road.jpg){width=90%} </center> <br>
+<center> ![Connecting Roads](img/road.jpg){width=90%} </center> <br>
 Highest concentration of major roads are found within Balikpapan city and Samarinda city which indicates these cities have a larger concentration of transportation facilities as compared to the regencies. 
 
 
-<center> ![Transport services](bus.jpg){width=90%} </center> <br> The different modes of transportations, airports, seaports and bus terminals are mostly situated within or near Balikpapan city and Samarinda city.
+<center> ![Transport services](img/bus.jpg){width=90%} </center> <br> The different modes of transportations, airports, seaports and bus terminals are mostly situated within or near Balikpapan city and Samarinda city.
 
 # Population & demographic
-<center> ![Distribution of adults aged 20 to 59](popdemo.jpg){width=90%} </center> <br> This group of people is vital for national progression as they are working individuals. Darker shaded areas have a denser population. This is well explained as Samarinda and Balikpapan are both city centers, signifying more job opportunities for career advancement.
+<center> ![Distribution of adults aged 20 to 59](img/popdemo.jpg){width=90%} </center> <br> This group of people is vital for national progression as they are working individuals. Darker shaded areas have a denser population. This is well explained as Samarinda and Balikpapan are both city centers, signifying more job opportunities for career advancement.
 
 # Economic & business
-<center> ![](surfacemining.jpg){width=90%} </center>
-<center> ![](othermining.jpg){width=90%} </center>
+<center> ![](img/surfacemining.jpg){width=90%} </center>
+<center> ![](img/othermining.jpg){width=90%} </center>
 The dataset contains coal mining, surface mining and other mining. Land used from mining activities could be a consideration when selecting the area for the city as it would involve additional economic cost to rehabilitate lands.
 
 # Infrastructure
-<center> ![](hosp.jpg){width=90%} </center> <br> These are essential services as they prevent diseases, improve wellbeing and quality of life for citizens. Choosing a site nearer to polygons with more healthcare facilities will be ideal. 
-<center> ![](education.jpg){width=90%} </center> <br> Educational institutions are not evenly distributed. Kota Samarinda and the coastline of Kota Balikpapan are densely populated with educational institutions. This might be due to the higher population density in those areas.
-<center> ![](electricity.jpg){width=90%} </center> <br> Electrical towers are not evenly spread out. This could be due to the fact that Kota Samarinda is the capital, and more modern buildings are located there. 
+<center> ![](img/hosp.jpg){width=90%} </center> <br> These are essential services as they prevent diseases, improve wellbeing and quality of life for citizens. Choosing a site nearer to polygons with more healthcare facilities will be ideal. 
+<center> ![](img/education.jpg){width=90%} </center> <br> Educational institutions are not evenly distributed. Kota Samarinda and the coastline of Kota Balikpapan are densely populated with educational institutions. This might be due to the higher population density in those areas.
+<center> ![](img/electricity.jpg){width=90%} </center> <br> Electrical towers are not evenly spread out. This could be due to the fact that Kota Samarinda is the capital, and more modern buildings are located there. 
 
 # Environment & hazard
-<center> ![](hotspot.jpg){width=90%} </center> <br> It is observed that hotspot points are consistently scattered throughout the whole study area. When choosing the capital area, we should avoid these spots as much as possible. 
-<center> ![](forest.jpg){width=90%} </center> <br> Climate change is a real problem, we should preserve forests as and when we can. By choosing a site that is far from forests, it reduces the need for deforestation, thus preserving the environment. 
-<center> ![](coastline.jpg){width=90%} </center> <br> Tsunamis are prevalent in Indonesia. By avoiding coastlines, we are mitigating the chances of high casualties and fatalities should a tsunami take place. 
+<center> ![](img/hotspot.jpg){width=90%} </center> <br> It is observed that hotspot points are consistently scattered throughout the whole study area. When choosing the capital area, we should avoid these spots as much as possible. 
+<center> ![](img/forest.jpg){width=90%} </center> <br> Climate change is a real problem, we should preserve forests as and when we can. By choosing a site that is far from forests, it reduces the need for deforestation, thus preserving the environment. 
+<center> ![](img/coastline.jpg){width=90%} </center> <br> Tsunamis are prevalent in Indonesia. By avoiding coastlines, we are mitigating the chances of high casualties and fatalities should a tsunami take place. 
 
 
 ```{r, include=FALSE}
@@ -89,11 +89,11 @@ knitr::write_bib(c('posterdown', 'rmarkdown','pagedown'), 'packages.bib')
 ```
 
 # Site selection
-<center> ![](finalsite.jpg){width=70%} </center> <br>
-<center> ![](ahp.jpg){width=90%} </center> <br>
-<center> ![](matrix.jpg){width=90%} </center> <br>
+<center> ![](img/finalsite.jpg){width=70%} </center> <br>
+<center> ![](img/ahp.jpg){width=90%} </center> <br>
+<center> ![](img/matrix.jpg){width=90%} </center> <br>
 
-After standarizing and rasterizing with the z-formula below, we created an AHP site suitability layer with the AHP values with a consistency check of 4%. 
+After standardizing and rasterizing with the z-formula below, we created an AHP site suitability layer with the AHP values with a consistency check of 4%. 
 
 $$
 z = 
@@ -101,7 +101,7 @@ z =
 $$
 We continued to narrow down the sites from AHP suitability layer by selecting sites that meet the 4500 to 5500 hectare requirement, and we were left with 2 sites to choose from. The following comparison table shows our thought process for evaluating the 2 sites. 
 
-<center> ![](comparisontable.jpg){width=90%} </center> <br>
+<center> ![](img/comparisontable.jpg){width=90%} </center> <br>
 
 Since site 1 has more highlighted boxes, it shows that site 1 is more favourable. Hence, our chosen site. 
 
