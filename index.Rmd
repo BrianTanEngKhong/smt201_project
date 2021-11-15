@@ -35,6 +35,8 @@ Read through our project through the following links:
 
 5. [Project Poster](poster.html)
 
+6. [Full Report](GIS Report.pdf)
+
 ---
 
 # Group Members
