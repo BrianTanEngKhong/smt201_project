@@ -2091,6 +2091,1076 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#data-sources">1.0 Data Sources</a></li>
+<li><a href="#general-notes">2.0 General Notes</a>
+<ul>
+<li><a href="#saving-layers-in-geopackage-format"><span style="text-decoration:underline">2.1 Saving layers in GeoPackage format</span></a></li>
+<li><a href="#coordinate-reference-system"><span style="text-decoration:underline">2.2 Coordinate Reference System</span></a></li>
+</ul></li>
+<li><a href="#data-preparation">3.0 Data Preparation</a>
+<ul>
+<li><a href="#selecting-study-area-polygon"><span style="text-decoration:underline">3.1 Selecting study area polygon</span></a></li>
+<li><a href="#adding-the-necessary-layers-for-analysis"><span style="text-decoration:underline">3.2 Adding the necessary layers for analysis</span></a></li>
+<li><a href="#merging-layers"><span style="text-decoration:underline">3.3 Merging layers</span></a></li>
+<li><a href="#clipping-the-various-layers"><span style="text-decoration:underline">3.4 Clipping the various layers</span></a></li>
+</ul></li>
+<li><a href="#data-cleaning">4.0 Data cleaning</a>
+<ul>
+<li><a href="#road-network"><span style="text-decoration:underline">4.1 Road network </span></a></li>
+<li><a href="#airport-buffer"><span style="text-decoration:underline">4.2 Airport buffer </span></a></li>
+<li><a href="#hotspot-heatmap"><span style="text-decoration:underline">4.3 Hotspot heatmap </span></a></li>
+</ul></li>
+<li><a href="#raster-proximity-and-slope">5.0 Raster, proximity and slope</a>
+<ul>
+<li><a href="#extracting-raster-data"><span style="text-decoration:underline">5.1 Extracting raster data</span></a></li>
+<li><a href="#creating-attribute-field-for-rastering"><span style="text-decoration:underline">5.2 Creating attribute field for rastering</span></a></li>
+<li><a href="#rastering-the-layers"><span style="text-decoration:underline">5.3 Rastering the layers</span></a></li>
+<li><a href="#proximity-calculation"><span style="text-decoration:underline">5.4 Proximity calculation</span></a></li>
+<li><a href="#slope-calculation"><span style="text-decoration:underline">5.5 Slope calculation</span></a></li>
+</ul></li>
+<li><a href="#choosing-a-suitable-site">6.0 Choosing a suitable site</a>
+<ul>
+<li><a href="#standardising-the-data-using-z-score"><span style="text-decoration:underline">6.1 Standardising the data using Z-Score</span></a></li>
+<li><a href="#ahp-calculation"><span style="text-decoration:underline">6.2 AHP calculation</span></a></li>
+<li><a href="#vectorizing-suitable-sites"><span style="text-decoration:underline">6.3 Vectorizing suitable sites</span></a></li>
+</ul></li>
+<li><a href="#geopackaged-layers">7.0 Geopackaged Layers</a></li>
+</ul>
+</nav>
+</div>
+<h2 id="data-sources">1.0 Data Sources</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Data Source</th>
+<th>Name</th>
+<th>Description</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Indonesia Geospatial</td>
+<td>BATAS DESA DESEMBER 2019 DUKCAPIL KALIMANTAN TIMUR</td>
+<td>Village boundary and population data for East Kalimantan 2019</td>
+<td><a href="https://www.indonesia-geospasial.com/2020/04/download-shapefile-shp-batas-desa.html" class="uri">https://www.indonesia-geospasial.com/2020/04/download-shapefile-shp-batas-desa.html</a></td>
+</tr>
+<tr class="even">
+<td>Indonesia Geospatial</td>
+<td>Geology Kalimantan Timur</td>
+<td>Geology Shapefile of East Kalimantan</td>
+<td><a href="https://www.indonesia-geospasial.com/2020/03/download-data-shapefile-shp-geologi-se.html" class="uri">https://www.indonesia-geospasial.com/2020/03/download-data-shapefile-shp-geologi-se.html</a></td>
+</tr>
+<tr class="odd">
+<td>Indonesia Geospatial</td>
+<td>KOTA BALIKPAPAN</td>
+<td>Topographical data layers of Balikpapan City</td>
+<td><a href="https://www.indonesia-geospasial.com/2020/01/shp-rbi-provinsi-kalimantan-timur.html" class="uri">https://www.indonesia-geospasial.com/2020/01/shp-rbi-provinsi-kalimantan-timur.html</a></td>
+</tr>
+<tr class="even">
+<td>Indonesia Geospatial</td>
+<td>KOTA SAMARINDA</td>
+<td>Topographical data layers of Samarinda City</td>
+<td><a href="https://www.indonesia-geospasial.com/2020/01/shp-rbi-provinsi-kalimantan-timur.html" class="uri">https://www.indonesia-geospasial.com/2020/01/shp-rbi-provinsi-kalimantan-timur.html</a></td>
+</tr>
+<tr class="odd">
+<td>Indonesia Geospatial</td>
+<td>KUTAI KARTANEGARA</td>
+<td>Topographical data layers of Kutai Kartanegara Regency</td>
+<td><a href="https://www.indonesia-geospasial.com/2020/01/shp-rbi-provinsi-kalimantan-timur.html" class="uri">https://www.indonesia-geospasial.com/2020/01/shp-rbi-provinsi-kalimantan-timur.html</a></td>
+</tr>
+<tr class="even">
+<td>Indonesia Geospatial</td>
+<td>OSM Buildings</td>
+<td>Detailed building footprints throughout Indonesia</td>
+<td><a href="https://www.indonesia-geospasial.com/2020/12/download-shp-pemukiman-detail-seluruh.html" class="uri">https://www.indonesia-geospasial.com/2020/12/download-shp-pemukiman-detail-seluruh.html</a></td>
+</tr>
+<tr class="odd">
+<td>Indonesia Geospatial</td>
+<td>PENAJAM PASER UTARA</td>
+<td>Topographical data layers of Penajam Paser Regency</td>
+<td><a href="https://www.indonesia-geospasial.com/2020/01/shp-rbi-provinsi-kalimantan-timur.html" class="uri">https://www.indonesia-geospasial.com/2020/01/shp-rbi-provinsi-kalimantan-timur.html</a></td>
+</tr>
+<tr class="even">
+<td>Indonesia Geospatial</td>
+<td>30. Provinsi Kalimantan Timur</td>
+<td>Digital elevation model at 30m resolution</td>
+<td><a href="https://www.indonesia-geospasial.com/2020/01/download-dem-srtm-30-meter-se-indonesia.html" class="uri">https://www.indonesia-geospasial.com/2020/01/download-dem-srtm-30-meter-se-indonesia.html</a></td>
+</tr>
+<tr class="odd">
+<td>Indonesia Geospatial</td>
+<td>Titik Api Hotspot se-Indonesia Tahun 2014 - 2019</td>
+<td>Indonesia fire Hotspot data from 2014-2019</td>
+<td><a href="https://www.indonesia-geospasial.com/2020/04/shapefile-shp-titik-api-hotspot.html" class="uri">https://www.indonesia-geospasial.com/2020/04/shapefile-shp-titik-api-hotspot.html</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="general-notes">2.0 General Notes</h2>
+<h3 id="saving-layers-in-geopackage-format"><span style="text-decoration:underline">2.1 Saving layers in GeoPackage format</span></h3>
+<p>Always remember to save all the layers in a <strong>GeoPackage</strong> format.</p>
+<ul>
+<li>Right click on the <strong>Layer → Export → Save Features As…</strong></li>
+</ul>
+<p>The Save Vector Layer as dialogue box will appear.</p>
+<ul>
+<li>Format: <strong>GeoPackage</strong></li>
+<li>File name: Navigate to the GeoPackage file in which you want to save your layer in → <strong>Indonesia.gpkg</strong></li>
+<li>CRS: Set this to the project CRS, <strong>ESPG: 23845 - DGN95 / Indonesia TM-3 zone 54.1</strong>.</li>
+</ul>
+<p><img src="img/1.jpg" /></p>
+<ul>
+<li>Click on <strong>OK</strong> and close the dialogue box.</li>
+<li>Delete the unnecessary layers after GeoPackaging it.</li>
+</ul>
+<h3 id="coordinate-reference-system"><span style="text-decoration:underline">2.2 Coordinate Reference System</span></h3>
+<p><strong>Name:</strong> EPSG:23845 – DGN95/Indonesia TM-3 zone 54.1</p>
+<p><strong>Units:</strong> Meters</p>
+<p><strong>Method:</strong> Transverse Mercator</p>
+<p><strong>Celestial body:</strong> Earth</p>
+<p><strong>Reference:</strong> Static (relies on a datum which is plate-fixed)</p>
+<h2 id="data-preparation">3.0 Data Preparation</h2>
+<h3 id="selecting-study-area-polygon"><span style="text-decoration:underline">3.1 Selecting study area polygon</span></h3>
+<ul>
+<li>Add BATAS_DESA_DESEMBER_2019_DUKCAPIL_KALIMANTAN_TIMUR layer, open attribute table and click on <strong>Select by Expression</strong>.</li>
+</ul>
+<p>The <strong>Select by Expression</strong> dialogue box will appear.</p>
+<ul>
+<li>Under the Fields and Values drop-down list, double click on <strong>KECAMATAN</strong> which represents districts.</li>
+<li>Click on <strong>equal sign ‘=’</strong></li>
+<li>Click on the <strong>All Unique</strong> button at the right column</li>
+<li>Add the expression into the expression pane as shown below to select the required study area.</li>
+</ul>
+<p><img src="img/2.jpg" /></p>
+<ul>
+<li>Click on <strong>Select Features</strong> and it should appear similar to what is shown below</li>
+</ul>
+<p><img src="img/studyarea.jpg" /></p>
+<ul>
+<li>Right click on the <strong>Layer → Export → Save selected features as</strong></li>
+<li>Geopackage the selected features and name the layer <strong>east_kalimantan.</strong></li>
+</ul>
+<h3 id="adding-the-necessary-layers-for-analysis"><span style="text-decoration:underline">3.2 Adding the necessary layers for analysis</span></h3>
+<p>We will now be adding layers we need for both the <em>Report of Survey (Task 1)</em> and <em>Site Selection (Task 2).</em> These layers can be found in the Kota Balikpapan, Kota Samarinda, Kutai Kartanegara and Penajam Paser Utara data files that were previously downloaded. For hotspots data, it can be found in the Titik Api Hotspot se-Indonesia Tahun data file from 2014 - 2019.</p>
+<p>The following shapefile layers should be added to QGIS:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>English Name</th>
+<th>Layer to be added</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Agriculture - Plantation</td>
+<td>Agrikebun</td>
+</tr>
+<tr class="even">
+<td>Agriculture - Rice field</td>
+<td>Agrisawah</td>
+</tr>
+<tr class="odd">
+<td>Agrifield</td>
+<td>Agriladang</td>
+</tr>
+<tr class="even">
+<td>Airport points</td>
+<td>Airport_PT</td>
+</tr>
+<tr class="odd">
+<td>Airport polygons</td>
+<td>Airport_AR</td>
+</tr>
+<tr class="even">
+<td>Bus terminals</td>
+<td>Terminal Bus</td>
+</tr>
+<tr class="odd">
+<td>Coastline</td>
+<td>Pesisir</td>
+</tr>
+<tr class="even">
+<td>Education</td>
+<td>Pendidkan</td>
+</tr>
+<tr class="odd">
+<td>Electricity</td>
+<td>Genlistrik &amp; Menaralistrik</td>
+</tr>
+<tr class="even">
+<td>Forest - Wet</td>
+<td>Non agri hutan basah</td>
+</tr>
+<tr class="odd">
+<td>Forest - Dry</td>
+<td>Non agri dry forest</td>
+</tr>
+<tr class="even">
+<td>Forest - Reed</td>
+<td>Nonagrialang</td>
+</tr>
+<tr class="odd">
+<td>Forest - Shrubs</td>
+<td>Non agri semak belukar</td>
+</tr>
+<tr class="even">
+<td>Health Services</td>
+<td>Layanan kesehantan</td>
+</tr>
+<tr class="odd">
+<td>Hospitals</td>
+<td>Rumah sakit</td>
+</tr>
+<tr class="even">
+<td>Hotspots</td>
+<td>Titik Api Hotspot se-Indonesia Tahun 2014-2019</td>
+</tr>
+<tr class="odd">
+<td>Industry</td>
+<td>Industri</td>
+</tr>
+<tr class="even">
+<td>Manufacturing</td>
+<td>Further extracted from Industri layer called ‘Industri Manufaktur Lainnya’ under REMARK</td>
+</tr>
+<tr class="odd">
+<td>Mining - Coal</td>
+<td>Further extracted from Industri layer called ’Pertambangan Batu Bara’under REMARK</td>
+</tr>
+<tr class="even">
+<td>Mining - Other</td>
+<td>Further extracted from Industri layer called ’Pertambangan Lainnya’under REMARK</td>
+</tr>
+<tr class="odd">
+<td>Mining - Open (Surface Mining)</td>
+<td>Tambang_AR</td>
+</tr>
+<tr class="even">
+<td>Phone Towers</td>
+<td>Menaratelpon</td>
+</tr>
+<tr class="odd">
+<td>River</td>
+<td>Sungai_LN</td>
+</tr>
+<tr class="even">
+<td>Roads</td>
+<td>Jalan</td>
+</tr>
+<tr class="odd">
+<td>Seaport points</td>
+<td>Pelabuhan_PT</td>
+</tr>
+<tr class="even">
+<td>Settlements</td>
+<td>Pemukiman</td>
+</tr>
+</tbody>
+</table>
+<h3 id="merging-layers"><span style="text-decoration:underline">3.3 Merging layers</span></h3>
+<p>Since we have data scattered in different folders (e.g. road shapefiles from Kota Balikpapan, Kota Samarinda and more), we will be merging them into one layer for a cleaner QGIS environment. The layers in the table in <em>section 3.2</em> should be merged as they are from the 4 different folders.</p>
+<ul>
+<li>From the top menu bar, select <strong>Vector → Data Management Tools → Merge Vector Layers.</strong></li>
+</ul>
+<p><img src="img/3.jpg" /></p>
+<ul>
+<li>Under Input layers, click on the more icon at the end to select the layers in which you want to merge.</li>
+<li>For destination CRS, select the <strong>project CRS (EPSG:23845)</strong></li>
+<li>Click on <strong>Run</strong>.</li>
+<li>A temporary merged layer will be created.</li>
+<li>The temporary layer should be clipped <em>(section 2.3.4)</em> to remove all unnecessary points and then saved into GeoPackage format.</li>
+</ul>
+<blockquote>
+<p><strong>Repeat</strong> this process of merging for all the other necessary layers</p>
+</blockquote>
+<h3 id="clipping-the-various-layers"><span style="text-decoration:underline">3.4 Clipping the various layers</span></h3>
+<ul>
+<li><p>We will be clipping the layers as mentioned above so that points outside of east_kalimantan will be cleaned away to keep only the points and polygons within our study area.</p></li>
+<li><p>From the top menu bar, click on <strong>Vector → Geoprocessing → Clip</strong></p></li>
+</ul>
+<p><img src="img/4.jpg" /></p>
+<ul>
+<li>For the Input layer, select from the drop down menu the layer in which we would like to clip. Note that all the layers merged in the previous section should be clipped.</li>
+<li>Click on the spanner beside the Input layer and select from the drop down menu <strong>Do not Filter (Better Performance).</strong></li>
+</ul>
+<p><img src="img/5.jpg" /></p>
+<ul>
+<li>For Limit features processed, select <strong>Not set</strong></li>
+<li>For Overlay layer, select <strong>east_kalimantan.</strong></li>
+<li>Click on the spanner beside the Overlay layer and select from the drop down menu <strong>Do not Filter (Better Performance).</strong></li>
+<li>Geopackage clipped layer and remove the temporary clipped layer and merged layers.</li>
+</ul>
+<blockquote>
+<p><strong>Repeat</strong> this process of clipping for all the other necessary layers.</p>
+</blockquote>
+<h2 id="data-cleaning">4.0 Data cleaning</h2>
+<h3 id="road-network"><span style="text-decoration:underline">4.1 Road network </span></h3>
+<ul>
+<li>Right click on the layer <strong>roads_merged</strong> and open attribute table.</li>
+<li>Select by expression the following roads: <strong>Jalan Arteri, Jalan Lokal, Jalan Kolektor.</strong></li>
+</ul>
+<p><img src="img/6.jpg" /></p>
+<ul>
+<li>Next, save the selected features into the GeoPackage and name the layer connectingRoads.</li>
+</ul>
+<h3 id="airport-buffer"><span style="text-decoration:underline">4.2 Airport buffer </span></h3>
+<ul>
+<li>We will first dissolve our airport polygon layer as we do not want to create multiple buffer for scenarios like this where there are 3 different polygons representing 1 airport</li>
+</ul>
+<p><img src="img/7.jpg" /></p>
+<ul>
+<li>Go to <strong>Vector → Geoprocessing Tools → Dissolve</strong>
+<ul>
+<li>For the input layer, we will select <strong>Airport</strong></li>
+</ul></li>
+</ul>
+<p><img src="img/8.jpg" /></p>
+<ul>
+<li><p>Click on <strong>run</strong></p></li>
+<li><p>We will have a layer called ‘Dissolved’. Save it to the Geopackage and rename it as <strong>AirportDissolved</strong></p></li>
+<li><p>Next, we want to create a buffer zone of 3.5km to airport for our accessibility to airport</p></li>
+<li><p>According to our research, a buffer zone of 3.5km from the airport zone will be used so as to minimize noise pollution in our proposed capital site.</p></li>
+<li><p>Using the AirportDissolved layer, we will create a 3.5km buffer</p></li>
+<li><p>Go to Vector &gt; Geoprocessing tools &gt; Buffer</p>
+<ul>
+<li>For the input layer, we will select <strong>AirportDissolved</strong></li>
+<li>Distance will be <strong>3500 meters</strong> or <strong>3.5 kilometers</strong> is also acceptable</li>
+<li>Segments we will change to <strong>100</strong></li>
+<li>End cap style and Join style will be <strong>Round</strong> and Miter limit will be default at 2</li>
+</ul></li>
+</ul>
+<p><img src="img/9.jpg" /></p>
+<ul>
+<li>Click on <strong>Run</strong></li>
+<li>A new layer called <strong>buffer</strong> will be created</li>
+<li>Save it to our Geopackage as <strong>AirportBuffer</strong></li>
+</ul>
+<h3 id="hotspot-heatmap"><span style="text-decoration:underline">4.3 Hotspot heatmap </span></h3>
+<ul>
+<li>From the top menu bar, select <strong>Processing → Toolbox → search for kernel density</strong></li>
+<li>Select <strong>Heatmap (Kernel Density Estimation)</strong></li>
+</ul>
+<p><img src="img/10a.jpg" /></p>
+<p>In the Heatmap dialog window:</p>
+<ul>
+<li>Point layer: <strong>hotspots_merged</strong></li>
+<li>Radius will be <strong>15000 meters</strong></li>
+<li>X and Y size pixels = <strong>100</strong></li>
+</ul>
+<p><img src="img/10b.jpg" /></p>
+<ul>
+<li>Click on <strong>Run</strong> and close the dialogue box.</li>
+<li>Save this into the GeoPackage as <strong>hotspots_heatmap.</strong></li>
+</ul>
+<p>We will now change the symbology of this layer to better visualise it.</p>
+<ul>
+<li>Right click on the layer and click on <strong>Properties → Symbology</strong></li>
+<li>Render Type: <strong>Singleband Pseudocolour</strong></li>
+<li>Colour Ramp: <strong>Red</strong></li>
+</ul>
+<p><img src="img/10c.jpg" /></p>
+<p><strong>The map should look like the image below: </strong></p>
+<p><img src="img/10.jpg" /></p>
+<h2 id="raster-proximity-and-slope">5.0 Raster, proximity and slope</h2>
+<h3 id="extracting-raster-data"><span style="text-decoration:underline">5.1 Extracting raster data</span></h3>
+<ul>
+<li>Import the <strong>DEM SRTM 30M KALIMANTAN TIMUR</strong> layer.</li>
+<li>From the menu bar, select <strong>Raster → Extraction → Clip Raster by Extent.</strong></li>
+<li>For Input layer, select <strong>DEM SRTM 30M KALIMANTAN TIMUR</strong> from the drop-down list.</li>
+<li>For Clipping extent, click on the icon at the end of the option then select <strong>Calculate from Layer.</strong></li>
+<li>Select <strong>east_kalimantan</strong> from the drop-down list.</li>
+</ul>
+<p><img src="img/11.jpg" /></p>
+<ul>
+<li><p>Click on <strong>Run</strong></p></li>
+<li><p>Geopackage the clipped raster</p></li>
+<li><p>Make sure to change Format to Geopackage in the drop down list.</p></li>
+<li><p>For Layer name, call it <strong>DEM.</strong></p></li>
+<li><p>Under extent, click on the drop down list <strong>Calculate from Layer</strong> and Select <strong>east_kalimantan.</strong></p></li>
+<li><p>Set resolution of <strong>30m by 30m</strong></p></li>
+</ul>
+<p><img src="img/12a.jpg" /></p>
+<ul>
+<li>When we are ready, click on <strong>OK</strong></li>
+</ul>
+<h3 id="creating-attribute-field-for-rastering"><span style="text-decoration:underline">5.2 Creating attribute field for rastering</span></h3>
+<ul>
+<li>At the <strong>Layers</strong> panel, click on <strong>connectingRoads</strong></li>
+<li>From the icon bar, click on the Open <strong>Attribute Table</strong> icon and click on <strong>Open field calculator</strong></li>
+<li>For <strong>Output field</strong> name, type <strong>POI_CODE</strong></li>
+<li>At the <strong>Expression</strong> pane, type <em>1</em></li>
+</ul>
+<p><img src="img/13.jpg" /></p>
+<ul>
+<li><p>Click on the <strong>OK</strong> button to run the function.</p></li>
+<li><p>A column called <strong>POI_CODE</strong> will be created.</p></li>
+</ul>
+<p><img src="img/14.jpg" /></p>
+<h3 id="rastering-the-layers"><span style="text-decoration:underline">5.3 Rastering the layers</span></h3>
+<ul>
+<li>From the menu bar, select <strong>Raster → Conversion → Rasterise (Vector to Raster)</strong></li>
+<li>For <strong>Input layer</strong>, select <strong>roads_merged</strong> from the drop-down list.</li>
+<li>For Field to use for a <strong>burn-in value</strong>, select <strong>POI_CODE</strong> from the drop-down list.</li>
+<li>For <strong>Output raster size units</strong>, select <strong>Georeferenced units</strong>.</li>
+<li>Keep both horizontal and vertical resolutions at <strong>100</strong> (meaning 100m by 100m resolution).</li>
+<li>For <strong>Output extent</strong>, click on <strong>Calculate from Layer</strong></li>
+<li>Select <strong>DEM</strong> from the drop-down list.</li>
+</ul>
+<p><img src="img/15.jpg" /></p>
+<ul>
+<li>Click on the <strong>Run</strong> button.</li>
+<li>A temporary layer will be created.</li>
+<li>Geopackage the layer and call it <strong>connectingRoads_rasterized</strong></li>
+</ul>
+<blockquote>
+<p><strong>Repeat</strong> for the rest of the dataset giving the names to each of the layers as shown below:</p>
+</blockquote>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Layer to be rasterized</th>
+<th>Final Layer Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>disaster_merged <em>(Note that this layer is formed by merging the river and coastline layers)</em></td>
+<td>disaster_rasterized</td>
+</tr>
+<tr class="even">
+<td>forest</td>
+<td>forest_rasterized</td>
+</tr>
+<tr class="odd">
+<td>seaport</td>
+<td>seaport_rasterized</td>
+</tr>
+<tr class="even">
+<td>connectingRoads</td>
+<td>connectingRoads_rasterized</td>
+</tr>
+<tr class="odd">
+<td>AirportBuffer</td>
+<td>airport_rasterized</td>
+</tr>
+<tr class="even">
+<td>settlements</td>
+<td>settlement_rasterized</td>
+</tr>
+</tbody>
+</table>
+<h3 id="proximity-calculation"><span style="text-decoration:underline">5.4 Proximity calculation</span></h3>
+<ul>
+<li>For the menu bar, select <strong>Raster → Analysis → Proximity (Raster Distance).</strong></li>
+<li>For <strong>Input layer</strong>, select <strong>roads_rasterized</strong> from the drop-down list.</li>
+<li>For <strong>Distance units</strong>, select <strong>Georeferenced coordinates</strong> from the drop-down list.</li>
+<li>For <strong>Output data type</strong>, select <em>Float32</em> from the drop-down list.</li>
+</ul>
+<p><img src="img/16.jpg" /></p>
+<ul>
+<li>Click on the <strong>Run</strong> button.</li>
+<li>Geopackage the layer and name it <strong>connectingRoads_proximity</strong></li>
+</ul>
+<blockquote>
+<p><strong>Repeat</strong> for the rest of the dataset giving the names to each of the layers as shown below:</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Layer to do proximity</th>
+<th>Final Layer Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>disaster_rasterized</td>
+<td>disaster_proximity</td>
+</tr>
+<tr class="even">
+<td>forest_rasterized</td>
+<td>forest_proximity</td>
+</tr>
+<tr class="odd">
+<td>seaport_rasterized</td>
+<td>seaport_proximity</td>
+</tr>
+<tr class="even">
+<td>connectingRoads_rasterized</td>
+<td>connectingRoads_proximity</td>
+</tr>
+<tr class="odd">
+<td>airport_rasterized</td>
+<td>airport_proximity</td>
+</tr>
+<tr class="even">
+<td>settlement_rasterized</td>
+<td>settlement_proximity</td>
+</tr>
+</tbody>
+</table>
+<h3 id="slope-calculation"><span style="text-decoration:underline">5.5 Slope calculation</span></h3>
+<ul>
+<li>From the menu bar, select <strong>Raster → Analysis → Slope.</strong></li>
+<li>For <strong>Input layer</strong>, select <strong>DEM_new</strong> from the drop-down list.</li>
+<li>Click on the <strong>Run</strong> button and <strong>Close</strong> the dialogue window.</li>
+<li>A temporary layer called <strong>Slope</strong> will be added.</li>
+<li>Set the resolution to <strong>30m by 30m</strong> resolution.</li>
+<li>Geopackage layer and name it <strong>slope30by30</strong></li>
+</ul>
+<p><strong>To ensure that our slope layer only covers the study area and not the sea boundaries, we will create a dissolve vector layer for the study area.</strong></p>
+<ul>
+<li>From the top menu bar <strong>Vector → Geoprocessing Tool → Dissolve.</strong></li>
+<li>Input layer select <strong>east_kalimantan.</strong></li>
+<li>Advanced options: <strong>Do not filter (Better performance).</strong></li>
+</ul>
+<p><img src="img/17.jpg" /></p>
+<ul>
+<li>Click on the <strong>OK</strong> button.</li>
+<li>Save to Geopackage name it <strong>StudyAreaSingle.</strong></li>
+</ul>
+<p>Next, we will clip raster by Mask Layer to get the raster layer of our slope in our study area</p>
+<ul>
+<li>From the top menu bar, select <strong>Raster → Extraction → Clip Raster</strong> by Mask Layer…</li>
+<li>Input layer: <strong>slope30by30</strong></li>
+<li>Mask layer: <strong>StudyAreaSingle</strong></li>
+</ul>
+<p><img src="img/18.jpg" /></p>
+<ul>
+<li>Click on <strong>Run</strong> and close the window.</li>
+<li>Save the Clipped(mask) layer into GeoPackage and change the resolution to <strong>100m by 100m</strong>.</li>
+<li>Name it as <strong>slopeStudyArea</strong>.</li>
+</ul>
+<h2 id="choosing-a-suitable-site">6.0 Choosing a suitable site</h2>
+<h3 id="standardising-the-data-using-z-score"><span style="text-decoration:underline">6.1 Standardising the data using Z-Score</span></h3>
+<p>We will be using <strong>Raster calculator</strong> to standardise the proximity layers. The following Z-score equation is used for standardisation.</p>
+<p><img src="img/formula.jpg" /></p>
+<p>To get the <em>minimum</em> and <em>maximum</em> values used for standardisation, <strong>right click</strong> on the particular proximity layer, <strong>disaster_proxmity</strong> and navigate to the <strong>Information tab</strong>. The <em>minimum</em> and <em>maximum</em> values can be found there.</p>
+<p><img src="img/19.jpg" /></p>
+<ul>
+<li>From the top menu bar, click on <strong>Process → Toolbox</strong></li>
+<li>A side pane will appear on the right.</li>
+<li>Double click on <strong>Raster calculator</strong>.</li>
+</ul>
+<p><img src="img/20.jpg" /></p>
+<blockquote>
+<p>Use the <strong>standardisation equation</strong> as mentioned above and key it into the <strong>expression pane</strong> as shown in the image below.</p>
+</blockquote>
+<p><img src="img/21.jpg" /></p>
+<ul>
+<li>Click on the <strong>Run</strong> button and close the window</li>
+<li>Export the layer as a GeoPacakge and name it <strong>factor_disaster</strong>.</li>
+</ul>
+<blockquote>
+<p><strong>Repeat</strong> this for all other proximity layers<br />
+<strong>Note</strong> that for layers in which we want to be close to, we will inverse the standardisation using <strong>(1 - Zvalue)</strong>. After standardizing, we save the respective results as:</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Layer to perform standardization</th>
+<th>Inverse (1-Zscore)</th>
+<th>Final Layer Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>disaster_proximity</td>
+<td>No</td>
+<td>factor_disaster_new</td>
+</tr>
+<tr class="even">
+<td>forest_proximity</td>
+<td>No</td>
+<td>factor_forest</td>
+</tr>
+<tr class="odd">
+<td>hotspots_heatmap</td>
+<td>Yes</td>
+<td>factor_hotspot</td>
+</tr>
+<tr class="even">
+<td>seaport_proximity</td>
+<td>Yes</td>
+<td>factor_seaport</td>
+</tr>
+<tr class="odd">
+<td>connectingRoads_proximity</td>
+<td>Yes</td>
+<td>factor_connectingRoad</td>
+</tr>
+<tr class="even">
+<td>airport_proximity</td>
+<td>Yes</td>
+<td>factor_airport</td>
+</tr>
+<tr class="odd">
+<td>slope</td>
+<td>Yes</td>
+<td>factor_slope</td>
+</tr>
+<tr class="even">
+<td>settlement_proximity</td>
+<td>Yes</td>
+<td>factor_settlement</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ahp-calculation"><span style="text-decoration:underline">6.2 AHP calculation</span></h3>
+<p>Using the Raster calculator, we will now calculate the composite factor score using the following AHP importance ranking and weights. Our team achieved a consistency score of <em>4%</em> and thus we will proceed with the following AHP weightage.</p>
+<p><img src="img/22.jpg" /></p>
+<p><img src="img/23.jpg" /></p>
+<p>We created the AHP suitability layer with the following calculation:</p>
+<blockquote>
+<p>(“<a href="mailto:factor_disaster_new@1" class="email">factor_disaster_new@1</a>” * 0.327) + (“<a href="mailto:factor_forest@1" class="email">factor_forest@1</a>”* 0.227) + (“<a href="mailto:factor_hotspot@1" class="email">factor_hotspot@1</a>” * 0.157) + (“<a href="mailto:factor_seaport@1" class="email">factor_seaport@1</a>” * 0.108) + (“<a href="mailto:factor_connectingRoad@1" class="email">factor_connectingRoad@1</a>” * 0.073) + (“<a href="mailto:factor_airport@1" class="email">factor_airport@1</a>” * 0.05) + (“<a href="mailto:factor_slope@1" class="email">factor_slope@1</a>” * 0.0340) + (“<a href="mailto:factor_settlement@1" class="email">factor_settlement@1</a>” * 0.024)</p>
+</blockquote>
+<ul>
+<li>Our reference layer will be any one of the factor layers that we have</li>
+<li>Output CRS will be <strong>EPSG:23845 – DGN95/Indonesia TM-3 zone 54.1</strong></li>
+</ul>
+<p><img src="img/24.jpg" /></p>
+<ul>
+<li>Click on <strong>Run</strong> and close the dialogue box after a new temporary layer is created.</li>
+<li>Save the temporary layer as a GeoPackage and name it <strong>AHP</strong>.</li>
+</ul>
+<p><img src="img/25.jpg" /></p>
+<p>From our analysis we decided that a composite factor score of 0.4 should be used as a cut-off for suitable sites. Now, we will use the function <strong>Reclassify by table</strong> to separate the sites into suitable and not suitable.</p>
+<ul>
+<li>From the <strong>Processing Toolbox</strong>, search for <strong>Reclassify by table</strong> and double click on it.</li>
+</ul>
+<p><img src="img/26.1.jpg" /></p>
+<p>The dialogue box for Reclassify by table will appear.</p>
+<ul>
+<li>Raster layer: <strong>AHP</strong></li>
+<li>Click on the more icon under Reclassification table and enter the following as shown below.</li>
+</ul>
+<p><img src="img/26.2.jpg" /></p>
+<ul>
+<li>Click <strong>OK</strong> to return to the previous screen</li>
+<li>For range boundaries select: <strong>min &lt;= value &lt; max</strong> Your dialogue box should look like the screenshot below</li>
+</ul>
+<p><img src="img/27.jpg" /></p>
+<ul>
+<li>Click on <strong>Run</strong> and close the dialogue box.</li>
+<li>Save this temporary Reclassified raster layer into the GeoPackage</li>
+<li>Name this layer <strong>MCDA_model.</strong></li>
+</ul>
+<p>The MCDA_model should look like the screenshot below. White portions indicate suitable sites while black portions indicate non suitable sites.</p>
+<p><img src="img/28.jpg" /></p>
+<h3 id="vectorizing-suitable-sites"><span style="text-decoration:underline">6.3 Vectorizing suitable sites</span></h3>
+<p>Now we need to convert the MCDA_model raster layer into a vector.</p>
+<ul>
+<li>From the top menu bar, select <strong>Polygonize (Raster to Vector)</strong></li>
+</ul>
+<p>The Polygonize (Raster to Vector) dialog window appears.</p>
+<ul>
+<li>For Input Layer, select <strong>MCDA_model</strong> from the drop-down list.</li>
+<li>For Name of the field to create, type <strong>Sites.</strong></li>
+<li>Keep the checkbox in front of Use 8-connectedness <strong>uncheck</strong>.</li>
+</ul>
+<p><img src="img/29.jpg" /></p>
+<ul>
+<li>Click on <strong>Run</strong> and close the window.</li>
+<li>A temporary layer called <strong>Vectorized</strong> will be added to the layers panel.</li>
+<li>Open the attribute table of this Vectorized layer.</li>
+<li>Note that there is a column called Sites with values <em>0 and 1</em>.</li>
+<li><em>0</em> indicates not suitable while <em>1</em> indicates suitable.</li>
+</ul>
+<p><img src="img/30.jpg" /></p>
+<ul>
+<li>Click on <strong>select by expression</strong> and enter the following expression into the expression box.</li>
+</ul>
+<p><img src="img/31.jpg" /></p>
+<ul>
+<li>The sites which are 0 (not suitable) are selected.</li>
+<li>Click on the <strong>Toggle Editing</strong> Button.</li>
+</ul>
+<p><img src="img/32.jpg" /></p>
+<ul>
+<li>Click on <strong>Delete Selected</strong> to remove all the non suitable sites.</li>
+</ul>
+<p><img src="img/33.jpg" /></p>
+<ul>
+<li>Export the layer into a GeoPackage.</li>
+<li>Name this layer <strong>AHP_suitability.</strong></li>
+<li>The suitable sites are the polygons in green as shown in the image below.</li>
+</ul>
+<p><img src="img/34.jpg" /></p>
+<p>Next, we will need to calculate the area of each polygon.</p>
+<ul>
+<li>Use the <strong>Field Calculator</strong></li>
+<li>Output field name: <strong>Site_area</strong></li>
+<li>Output field type: <strong>Decimal number (real)</strong></li>
+<li>From the Geometry drop-down menu in the middle column, double click on <strong>$area</strong> to add to the expression pane.</li>
+</ul>
+<p><img src="img/35.jpg" /></p>
+<ul>
+<li>Click on <strong>OK.</strong> Note that a new column will be added to the attribute table which includes all the areas of polygons in meters square.</li>
+<li>However, we want the area to be in <strong>Hectares</strong>. To do this, repeat the above steps to create a new field called <strong>area_hectares.</strong></li>
+<li>For area_hectares, the expression should be <strong>$area/10000</strong> instead.</li>
+</ul>
+<blockquote>
+<p>The <strong>attribute table</strong> should look like this</p>
+</blockquote>
+<p><img src="img/36.jpg" /></p>
+<h2 id="geopackaged-layers">7.0 Geopackaged Layers</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>GeoPackage Layer Name</th>
+<th>Geometry</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Agriculture_merged</td>
+<td>Vector - Polygon</td>
+<td>Includes all agriculture polygons in the study area</td>
+</tr>
+<tr class="even">
+<td>Agrifield</td>
+<td>Vector - Polygon</td>
+<td>Represents <strong>Tegalan</strong>(dry-land) and <strong>Ladang</strong> (garden/bare land/ shifting land)</td>
+</tr>
+<tr class="odd">
+<td>AHP</td>
+<td>Raster</td>
+<td>Raster layer of composite factor score</td>
+</tr>
+<tr class="even">
+<td>AHP_suitability</td>
+<td>Vector - Polygon</td>
+<td>Polygons of suitable sites</td>
+</tr>
+<tr class="odd">
+<td>Airport</td>
+<td>Vector - Polygon</td>
+<td>Airport polygons in the study area</td>
+</tr>
+<tr class="even">
+<td>airport_points</td>
+<td>Vector - Point</td>
+<td>Airport points in the study area</td>
+</tr>
+<tr class="odd">
+<td>airport_proximity</td>
+<td>Raster</td>
+<td>Proximity to airport polygons</td>
+</tr>
+<tr class="even">
+<td>airport_rasterized</td>
+<td>Raster</td>
+<td>Raster layer made from airport polygons</td>
+</tr>
+<tr class="odd">
+<td>AirportBuffer</td>
+<td>Vector - Polygon</td>
+<td>Polygon representation of Airport Buffer Zone of 3.5km</td>
+</tr>
+<tr class="even">
+<td>AirportDissolved</td>
+<td>Vector - Polygon</td>
+<td>Dissolved Airport polygons in the study area</td>
+</tr>
+<tr class="odd">
+<td>BalikpapanCity</td>
+<td>Vector - Polygon</td>
+<td>Polygon of Kota Balikpapan</td>
+</tr>
+<tr class="even">
+<td>bus_terminals_merged</td>
+<td>Vector - Point</td>
+<td>Bus terminal points in the study area</td>
+</tr>
+<tr class="odd">
+<td>CoalMining</td>
+<td>Vector - Point</td>
+<td>Coal Mining points in the study area</td>
+</tr>
+<tr class="even">
+<td>Coastline</td>
+<td>Vector - Line</td>
+<td>Coastlines in the study area</td>
+</tr>
+<tr class="odd">
+<td>connectingRoads</td>
+<td>Vector - Line</td>
+<td>Major roads in our study area</td>
+</tr>
+<tr class="even">
+<td>connectingRoads_proximity</td>
+<td>Raster</td>
+<td>Proximity to major roads</td>
+</tr>
+<tr class="odd">
+<td>connectingRoads_rasterized</td>
+<td>Raster</td>
+<td>Raster layer made from connectingRoads</td>
+</tr>
+<tr class="even">
+<td>DEM_new</td>
+<td>Raster</td>
+<td>Digital Elevation Model of the study area</td>
+</tr>
+<tr class="odd">
+<td>disaster_merged</td>
+<td>Vector - Line</td>
+<td>Merged river and coastline layers</td>
+</tr>
+<tr class="even">
+<td>disaster_proximity</td>
+<td>Raster</td>
+<td>Proximity to river and coastline</td>
+</tr>
+<tr class="odd">
+<td>disaster_rasterized</td>
+<td>Raster</td>
+<td>Raster layer of disaster_merged</td>
+</tr>
+<tr class="even">
+<td>east_kalimantan</td>
+<td>Vector - Polygon</td>
+<td>Study area</td>
+</tr>
+<tr class="odd">
+<td>education_merged</td>
+<td>Vector - Point</td>
+<td>Education points in our study area</td>
+</tr>
+<tr class="even">
+<td>electricity_merged</td>
+<td>Vector - Point</td>
+<td>Electricity points in our study area</td>
+</tr>
+<tr class="odd">
+<td>factor_airport</td>
+<td>Raster</td>
+<td>Raster layer of standardised score for proximity to airport polygons</td>
+</tr>
+<tr class="even">
+<td>factor_connectingRoad</td>
+<td>Raster</td>
+<td>Raster layer of standardised score for proximity to connectingRoads</td>
+</tr>
+<tr class="odd">
+<td>factor_disaster_new</td>
+<td>Raster</td>
+<td>Raster layer of standardised score for proximity to river and coastlines</td>
+</tr>
+<tr class="even">
+<td>factor_forest</td>
+<td>Raster</td>
+<td>Raster layer of standardised score for proximity to forests</td>
+</tr>
+<tr class="odd">
+<td>factor_hotspot</td>
+<td>Raster</td>
+<td>Raster layer of standardised score for proximity to hotspots</td>
+</tr>
+<tr class="even">
+<td>factor_seaport</td>
+<td>Raster</td>
+<td>Raster layer of standardised score for proximity to seaports</td>
+</tr>
+<tr class="odd">
+<td>factor_settlement</td>
+<td>Raster</td>
+<td>Raster layer of standardised score for proximity to settlements</td>
+</tr>
+<tr class="even">
+<td>factor_slope</td>
+<td>Raster</td>
+<td>Raster layer of standardised score for slope</td>
+</tr>
+<tr class="odd">
+<td>FinalSite</td>
+<td>Vector - Polygon</td>
+<td>Final site which was chosen for task 2</td>
+</tr>
+<tr class="even">
+<td>forest</td>
+<td>Vector - Polygon</td>
+<td>Forest polygons in the study area</td>
+</tr>
+<tr class="odd">
+<td>forest_proximity</td>
+<td>Raster</td>
+<td>Proximity to forests</td>
+</tr>
+<tr class="even">
+<td>forest_rasterized</td>
+<td>Raster</td>
+<td>Raster layer of forest polygons</td>
+</tr>
+<tr class="odd">
+<td>Geology</td>
+<td>Vector - Polygon</td>
+<td>Geology polygon for Indonesia</td>
+</tr>
+<tr class="even">
+<td>Geology_StudyArea</td>
+<td>Vector - Polygon</td>
+<td>Geology polygon for the study area</td>
+</tr>
+<tr class="odd">
+<td>healthServices_merged</td>
+<td>Vector - Point</td>
+<td>Health services points in our study area</td>
+</tr>
+<tr class="even">
+<td>Hillshade</td>
+<td>Raster</td>
+<td>Grayscale 3D representation of the surface</td>
+</tr>
+<tr class="odd">
+<td>hospitals_merged</td>
+<td>Vector - Point</td>
+<td>Hospital points in the study area</td>
+</tr>
+<tr class="even">
+<td>hotspots_heatmap</td>
+<td>Raster</td>
+<td>Heatmap of hotspots in the study area</td>
+</tr>
+<tr class="odd">
+<td>hotspots_merged</td>
+<td>Vector - Point</td>
+<td>Hotspot points in the study area</td>
+</tr>
+<tr class="even">
+<td>Industry_merged</td>
+<td>Vector - Point</td>
+<td>Industry points in the study area</td>
+</tr>
+<tr class="odd">
+<td>KutaiKartanegara_Regency</td>
+<td>Vector - Polygon</td>
+<td>Kutai Kartanegara regency</td>
+</tr>
+<tr class="even">
+<td>Manufacturing</td>
+<td>Vector - Point</td>
+<td>Manufacturing points in the study area</td>
+</tr>
+<tr class="odd">
+<td>MCDA_model</td>
+<td>Raster</td>
+<td>Reclassified raster of AHP. White portions indicate suitable sites while black portions indicate non suitable sites.</td>
+</tr>
+<tr class="even">
+<td>OpenMining</td>
+<td>Vector - Polygon</td>
+<td>Polygon of Surface Mining areas in the study area</td>
+</tr>
+<tr class="odd">
+<td>OtherMining</td>
+<td>Vector - Point</td>
+<td>Point representation of Other Mining activities in study area</td>
+</tr>
+<tr class="even">
+<td>PenajamNorthPaser_Regency</td>
+<td>Vector - Polygon</td>
+<td>Polygon of Penajam North Paser Regency</td>
+</tr>
+<tr class="odd">
+<td>phone_towers</td>
+<td>Vector - Point</td>
+<td>Phone tower points in the study area</td>
+</tr>
+<tr class="even">
+<td>Plantations_merged</td>
+<td>Vector - Polygon</td>
+<td>Polygons of plantations in the study area</td>
+</tr>
+<tr class="odd">
+<td>Ricefield</td>
+<td>Vector - Polygon</td>
+<td>Polygon of rice fields in the study area</td>
+</tr>
+<tr class="even">
+<td>rivers</td>
+<td>Vector - Line</td>
+<td>Lines of rivers across the study area</td>
+</tr>
+<tr class="odd">
+<td>roads_merged</td>
+<td>Vector - Line</td>
+<td>Lines of roads across the study area</td>
+</tr>
+<tr class="even">
+<td>SamarindaCity</td>
+<td>Vector - Polygon</td>
+<td>Polygon of Kota Samarinda</td>
+</tr>
+<tr class="odd">
+<td>Seaport</td>
+<td>Vector - Point</td>
+<td>Seaport points in the study area</td>
+</tr>
+<tr class="even">
+<td>seaport_proximity</td>
+<td>Raster</td>
+<td>Proximity to seaports</td>
+</tr>
+<tr class="odd">
+<td>seaport_rasterized</td>
+<td>Raster</td>
+<td>Raster layer of seaport points</td>
+</tr>
+<tr class="even">
+<td>Settlement</td>
+<td>Vector - Polygon</td>
+<td>Polygons of settlements in the study area</td>
+</tr>
+<tr class="odd">
+<td>settlement_proximity</td>
+<td>Raster</td>
+<td>Proximity to settlements</td>
+</tr>
+<tr class="even">
+<td>settlement_rasterized</td>
+<td>Raster</td>
+<td>Raster layer of settlement polygons</td>
+</tr>
+<tr class="odd">
+<td>slope30by30</td>
+<td>Raster</td>
+<td>Slope layer which has a resolution of 30m by 30m</td>
+</tr>
+<tr class="even">
+<td>slopeStudyArea</td>
+<td>Raster</td>
+<td>Slope layer of the study area</td>
+</tr>
+<tr class="odd">
+<td>StudyAreaSingle</td>
+<td>Vector - Polygon</td>
+<td>A single polygon of our entire study area</td>
+</tr>
+</tbody>
+</table>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

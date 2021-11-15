@@ -245,3 +245,17 @@ As our AHP consistency score is 4%, we could have tried out  more AHP permutatio
 Additionally, it would be good if we were able to get external help from someone fluent in Bahasa Indonesia. As attributes in the data are mainly in that language, we were unable to translate all attributes due to the language barrier. Therefore, there might be minor inconsistencies as we might have missed a few layers, which might have affected the final AHP site suitability results. 
 
 In future, we hope that the skills we gained from Geographic Information Systems for Urban Planning will be put to good use, so that we can derive deeper insights for better urban planning and analysis.
+
+## 1.6 References
+
+<div style="padding-left: 4em; text-indent: -4em;">
+
+<p>Edu-tourism in tropical agricultural system - UGM Indonesia. (n.d.). Retrieved November 14, 2021, from http://www.faperta.ugm.ac.id/newbie/en/headlines/tourist_course.php.</p>
+<p>Encyclopædia Britannica, inc. (2019, July 1). East Kalimantan. Encyclopædia Britannica. Retrieved November 14, 2021, from https://www.britannica.com/place/East-Kalimantan.</p>
+<p>Indonesia - insights into the coal mining, port and Shipping Industries. Eye on Asia. (n.d.). Retrieved November 14, 2021, from https://www.eyeonasia.gov.sg/asean-countries/share/what-young-people-say/indonesia-insights-into-coal-mining-port-shipping-industries/.</p>
+<p>Indonesia. ASEAN IP. (n.d.). Retrieved November 14, 2021, from https://www.aseanip.org/Resources/ASEAN-IP-Offices-Details/Indonesia.</p>
+<p>Indonesian president announces site of new capital on Borneo Island. CNA. (2019, August 26). Retrieved November 14, 2021, from https://www.channelnewsasia.com/asia/indonesia-picks-borneo-island-as-site-of-new-capital-joko-widodo-868046.</p>
+<p>O'Neill, A. (2021, August 17). Countries with the largest population 2021. Statista. Retrieved November 14, 2021, from https://www.statista.com/statistics/262879/countries-with-the-largest-population/.</p>
+<p>Statista Research Department. (2021, September 27). Indonesia: East Kalimantan GDP distribution. Statista. Retrieved November 14, 2021, from https://www.statista.com/statistics/1092835/indonesia-east-kalimantan-gdp-distribution/.</p>
+<p>Wolters, O. W. (2021, November 12). Indonesia. Encyclopædia Britannica. Retrieved November 14, 2021, from https://www.britannica.com/place/Indonesia.</p> 
+</div>
