@@ -25,3 +25,4 @@ author:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+![](img/team.jpg)
