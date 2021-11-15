@@ -83,7 +83,8 @@ Highest concentration of major roads are found within Balikpapan city and Samari
 
 <font size="4"> </center> 
 # Population & demographic
-<center> </font> ![Distribution of adults aged 20 to 59](img/popdemo.jpg){width=90%} </center> <br> This group of people is vital for national progression as they are working individuals. Darker shaded areas have a denser population. This is well explained as Samarinda and Balikpapan are both city centers, signifying more job opportunities for career advancement.
+<center> </font> ![Distribution of adults aged 20 to 59](img/popdemo.jpg){width=90%} </center> <br> 
+This group of people is vital for national progression as they are working individuals. Darker shaded areas have a denser population. This is well explained as Samarinda and Balikpapan are both city centers, signifying more job opportunities for career advancement.
 
 <font size="4"> </center>
 # Economic & business
@@ -93,15 +94,23 @@ The dataset contains coal mining, surface mining and other mining. Land used fro
 
 <font size="4"> </center> 
 # Infrastructure
-<center> </font> ![Hospitals & health services](img/hosp.jpg){width=90%} </center> These are essential services as they prevent diseases, improve wellbeing and quality of life for citizens. Choosing a site nearer to polygons with more healthcare facilities will be ideal. 
-<center> ![Educational institutions](img/education.jpg){width=90%} </center> Educational institutions are not evenly distributed. Kota Samarinda and the coastline of Kota Balikpapan are densely populated with educational institutions. This might be due to the higher population density in those areas.
+<center> </font> ![Hospitals & health services](img/hosp.jpg){width=90%} </center> <br>
+These are essential services as they prevent diseases, improve wellbeing and quality of life for citizens. Choosing a site nearer to polygons with more healthcare facilities will be ideal. 
+<center><br> ![Educational institutions](img/education.jpg){width=90%} </center> 
+<br>
+Educational institutions are not evenly distributed. Kota Samarinda and the coastline of Kota Balikpapan are densely populated with educational institutions. This might be due to the higher population density in those areas.
 <center> ![Electrical towers](img/electricity.jpg){width=90%} </center> Electrical towers are not evenly spread out. This could be due to the fact that Kota Samarinda is the capital, and more modern buildings are located there. 
 
 <font size="4"> </center> 
 # Environment & hazard
-<center> </font> ![Fire hotspots](img/hotspot.jpg){width=90%} </center> <br> It is observed that hotspot points are consistently scattered throughout the whole study area. When choosing the capital area, we should avoid these spots as much as possible. 
-<center> ![Forests](img/forest.jpg){width=90%} </center> <br> Climate change is a real problem, we should preserve forests as and when we can. By choosing a site that is far from forests, it reduces the need for deforestation, thus preserving the environment. 
-<center> ![Coastline](img/coastline.jpg){width=90%} </center> <br> Tsunamis are prevalent in Indonesia. By avoiding coastlines, we are mitigating the chances of high casualties and fatalities should a tsunami take place. 
+<center> </font> ![Fire hotspots](img/hotspot.jpg){width=90%} </center> 
+It is observed that hotspot points are consistently scattered throughout the whole study area. When choosing the capital area, we should avoid these spots as much as possible. 
+
+<center> ![Forests](img/forest.jpg){width=90%} </center> 
+Climate change is a real problem, we should preserve forests as and when we can. By choosing a site that is far from forests, it reduces the need for deforestation, thus preserving the environment. 
+
+<center> ![Coastline](img/coastline.jpg){width=90%} </center>  
+Tsunamis are prevalent in Indonesia. By avoiding coastlines, we are mitigating the chances of high casualties and fatalities should a tsunami take place. 
 
 
 ```{r, include=FALSE}
@@ -112,7 +121,7 @@ knitr::write_bib(c('posterdown', 'rmarkdown','pagedown'), 'packages.bib')
 # Site selection
 <center> </font> ![Chosen site](img/finalsite.jpg){width=80%} </center> <br>
 <center> ![AHP](img/ahp.jpg){width=90%} </center> <br>
-<center> ![Pairwise comparison matrix](img/matrix.jpg){width=90%} </center> <br>
+<center> ![Pairwise comparison matrix](img/matrix.jpg){width=100%} </center> <br>
 
 After standarizing and rasterizing with the z-formula below, we created an AHP site suitability layer with the AHP values with a consistency check of 4%. 
 
@@ -140,4 +149,4 @@ Additionally, it would be good if we were able to get external help from someone
 In future, we hope that the skills we gained from Geographic Information Systems for Urban Planning will be put to good use, so that we can derive deeper insights for better urban planning and analysis.
 
 
-<br><center> <font size="7"> **THANK YOU**  </font> </center>
+<br><center> <font size="7"> **THANK YOU!**  </font> </center>
