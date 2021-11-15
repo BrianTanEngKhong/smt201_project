@@ -1,7 +1,5 @@
 ---
-title: "Overview"
-description: |
-  GIS Project overview.
+title: "Project Overview"
 
 date: "`r Sys.Date()`"
 output: 
