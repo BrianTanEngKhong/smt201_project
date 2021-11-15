@@ -112,8 +112,8 @@ Hospitals | Rumah sakit
 Hotspots | Titik Api Hotspot se-Indonesia Tahun 2014-2019
 Industry | Industri
 Manufacturing | Further extracted from Industri layer called ‘Industri Manufaktur Lainnya’ under REMARK
-Mining - Coal | Further extracted from Industri layer called ‘Pertambangan Batu Bara’under REMARK
-Mining - Other | Further extracted from Industri layer called ‘Pertambangan  Lainnya’under REMARK
+Mining - Coal | Further extracted from Industri layer called ‘Pertambangan Batu Bara’ under REMARK
+Mining - Other | Further extracted from Industri layer called ‘Pertambangan  Lainnya’ under REMARK
 Mining - Open (Surface Mining) | Tambang_AR
 Phone Towers | Menaratelpon
 River | Sungai_LN

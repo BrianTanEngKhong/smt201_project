@@ -1,11 +1,10 @@
 ---
 title: "About this site"
 description: |
-  SMT201 G1 T3 GIS Project
+  SMT201 G1 Team 3 Group Members
 
 author:
   - name: Brian Tan Eng Khong
-    email: ektan.2020@scis.smu.edu.sg
     url: https://www.linkedin.com/in/briantanengkhong/
     affiliation: School of Computing and Information Systems, Singapore Management University
     affiliation_url: https://scis.smu.edu.sg/
