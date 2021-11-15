@@ -125,7 +125,7 @@ We set n = 8 for the number of factors to be used in our AHP calculation and ran
 *Figure 4: Suitable sites*
 </p>
 
-After performing AHP analysis, we have derived a layer with suitable sites highlighted in green as shown in figure 25. To narrow down these areas, we first check if each of these suitable sites meet the size requirements. As we have calculated the area of each of these polygons in hectares, we can simply use the identify tool to confirm whether or not the polygons are within 4500 to 5500 hectares. 
+After performing AHP analysis, we have derived a layer with suitable sites highlighted in green as shown in *figure 4*. To narrow down these areas, we first check if each of these suitable sites meet the size requirements. As we have calculated the area of each of these polygons in hectares, we can simply use the identify tool to confirm whether or not the polygons are within 4500 to 5500 hectares. 
 
 ![](img/A3.jpg)
 
