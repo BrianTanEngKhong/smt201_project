@@ -10,10 +10,12 @@ author:
     affiliation_url: https://scis.smu.edu.sg/
 
   - name: Christine Kwan Jia Ing
+    url: https://www.linkedin.com/in/christine-kwan/
     affiliation: School of Computing and Information Systems, Singapore Management University
     affiliation_url: https://scis.smu.edu.sg/
 
   - name: Jamie Cho Xin Yi
+    url: https://www.linkedin.com/in/jamie-cho/
     affiliation: School of Computing and Information Systems, Singapore Management University
     affiliation_url: https://scis.smu.edu.sg/  
 
